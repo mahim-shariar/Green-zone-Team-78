@@ -1,4 +1,4 @@
-import { Grid, List, ListItemText, Typography } from '@mui/material';
+import { Button, Grid, List, ListItemText, Typography } from '@mui/material';
 import React from 'react';
 import footerLogo from '../../../image/tree-ring_JAVSJPT33J.jpg';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -33,7 +33,8 @@ const Footer = () => {
             style={{ backgroundColor: '#e1c265',padding:'10px'}}
             src="http://barhouse.like-themes.com/wp-content/uploads/2018/05/logo-small.png"
             alt="" />
-        <Typography variant='body1' sx={{color:'#e1c265'}}>We have over 10 years of experience, We take pride in delivering Intelligent Designs for clients all over the World.</Typography>        
+                <Typography variant='body1' sx={{ color: '#e1c265' }}>We have over 10 years of experience, We take pride in delivering Intelligent Designs for clients all over the World.</Typography>
+         <Button style={{color:'#e1c265'}}>Subscribe Us</Button>        
         </Grid>
         <Grid item xs={12} md={3}>
           <Typography variant='h4' sx={{color:'#e1c265',fontWeight:'800'}}>
@@ -89,7 +90,7 @@ const Footer = () => {
             </Grid>
         </Grid>
         <Box>
-        <Typography sx={{backgroundColor:'#1d1815',color:'white',padding:'10px'}}>&copy;2021--All Rights are Reserved by &trade; Barhouse || Created &hearts; By Musfiqur Rahman</Typography>
+        <Typography sx={{backgroundColor:'#1d1815',color:'white',padding:'10px'}}>&copy;2021--All Rights are Reserved By &trade; Bar-House || Created &hearts; By Musfiqur Rahman</Typography>
         </Box> </>
     );
 };
