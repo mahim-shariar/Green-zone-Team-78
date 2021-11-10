@@ -5,7 +5,7 @@ import stageman from '../../../../image/stages-man.png';
 
 const WorkStage = () => {
     return (
-        <Container>
+        <Container sx={{mt:8}}>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={4}
                     sx={{
@@ -28,12 +28,16 @@ const WorkStage = () => {
             <Grid item xs={12} md={4}>
                     <img
                         height='100%'
-                        width='100%'
+                        width='auto'
                         src={imgHouse}
                         alt="" />
            </Grid>
            <Grid item xs={12} md={4}>
-           <img src={stageman} alt="" />
+                    <img
+                        width='90%'
+                        style={{marginTop:'18%',marginLeft:'60px'}}
+                        src={stageman}
+                        alt="" />
            </Grid>
             </Grid>
         </Container>
