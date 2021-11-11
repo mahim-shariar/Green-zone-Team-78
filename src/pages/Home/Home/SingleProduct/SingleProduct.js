@@ -1,8 +1,9 @@
 import { Avatar, Button, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SingleProduct = (props) => {
-    const { name, description, image, price, discountPrice } = props.product;       
+    const { name, description, image, price, discountPrice, _id } = props.product;
     return (
         <Grid item xs={12} md={4}>
             <Paper elevation={3} sx={{p:6}}>
@@ -44,7 +45,11 @@ const SingleProduct = (props) => {
                     </Typography>
                     
                 </div>
-                <Button variant='contained' sx={{backgroundColor:'#574437'}}>Purchase Now</Button>
+                <Link to={`/purchaseProducts/${_id}`} style={{textDecoration:'none'}}>
+                <Button
+                    variant='contained'
+                    sx={{ backgroundColor: '#574437'}}>Purchase Now</Button>
+                </Link>
          </Paper>
     </Grid>
     );

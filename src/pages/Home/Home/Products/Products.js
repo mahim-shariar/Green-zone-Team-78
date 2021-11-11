@@ -15,7 +15,7 @@ const Products = () => {
     useEffect(() => {
         fetch('http://localhost:5000/addProducts')
             .then(res => res.json())
-            .then(data=>setProducts(data))
+            .then(data=>setProducts(data.slice(0,6)))
     },[])
     return (           
         <div style={style}>
@@ -33,5 +33,4 @@ const Products = () => {
        </div>
     );
 };
-
 export default Products;

@@ -41,7 +41,7 @@ const SendReviews = () => {
       <form onSubmit={handleSubmit(onSubmit)} style={{display:"flex",flexDirection:'column',width:'40%',margin:'auto'}}>
                 <input {...register("name")}
                     style={style}
-                    placeholder='Products Name'
+                    placeholder='Name'
                 />
                 <input {...register("profession")}
                     style={style}
@@ -50,7 +50,7 @@ const SendReviews = () => {
                 
                 <textarea {...register("description")}
                     style={style}
-                    placeholder='Products Description'
+                    placeholder='Description'
                 />
                 <input type="number" {...register("rating")}
                     style={style}
@@ -58,7 +58,7 @@ const SendReviews = () => {
                 />
                 <input type="imageUrl" {...register("image")}
                     style={style}
-                    placeholder='Products Image'
+                    placeholder='Image'
                 />
                 <input type="submit"
                     style={style} />

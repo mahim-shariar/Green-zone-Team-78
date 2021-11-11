@@ -9,6 +9,10 @@ import Payment from './pages/Home/Home/Dashboard/Payment';
 import SendReviews from './pages/Home/Home/Dashboard/SendReviews';
 import Login from './pages/Home/Home/Login/Login/Login';
 import Register from './pages/Home/Home/Login/Register/Register';
+import MeetBenefits from './pages/Home/Home/MeetBenefits/MeetBenefits';
+import Products from './pages/Home/Home/Products/Products';
+import PurchaseProducts from './pages/Home/Home/PurchaseProducts/PurchaseProducts';
+import Reviews from './pages/Home/Home/Reviews/Reviews';
 
 
 function App() {
@@ -22,6 +26,18 @@ function App() {
            </Route>
           <Route exact path='/home'>
               <Home></Home>
+           </Route>
+          <Route exact path='/products/:productId'>
+              <Products></Products>
+           </Route>
+          <Route exact path='/purchaseProducts/:productId'>
+              <PurchaseProducts></PurchaseProducts>
+           </Route>
+          <Route exact path='/meetBenefit'>
+              <MeetBenefits></MeetBenefits>
+           </Route>
+          <Route exact path='/reviews'>
+              <Reviews></Reviews>
            </Route>
           <Route exact path='/login'>
               <Login></Login>

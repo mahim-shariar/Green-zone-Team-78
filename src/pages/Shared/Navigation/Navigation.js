@@ -39,9 +39,9 @@ const Navigation = () => {
             </div>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             </Typography>
-              <Link to='/home' style={style}><Button color="inherit">Home</Button></Link>      
-              <Link to='/about' style={style}><Button color="inherit">Explore</Button></Link>      
-              <Link to='/products' style={style}><Button color="inherit">Products</Button></Link>      
+            <Link to='/home' style={style}><Button color="inherit">Home</Button></Link>
+            <Link to='/meetBenefit' style={style}><Button color="inherit">About</Button></Link> 
+              <Link to='/products' style={style}><Button color="inherit">Explore</Button></Link>                  
               <Link to='/reviews' style={style}><Button color="inherit">Reviews</Button></Link>      
             {
               user.email &&<Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>  
