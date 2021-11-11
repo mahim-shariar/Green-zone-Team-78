@@ -9,8 +9,11 @@ import offers4 from '../../../../image/icon-img/service-icon-4.png';
 import offers5 from '../../../../image/icon-img/service-icon-5.png';
 import offers6 from '../../../../image/icon-img/service-icon-6.png';
 
+
 const style = {
-   backgroundImage:`url(${bg})`
+      backgroundImage: `url(${bg})`,
+      backgroundAttachment: 'fixed',
+      backgroundSize:'cover'
 }
 
 
@@ -20,7 +23,7 @@ const Banner = () => {
         <Grid item xs={12} md={6} sx={{mt:8}}>
          <Typography variant='h3' style={{fontWeight:'800'}}>
             <span style={{color:'#e1c265',fontWeight:'900',fontSize:'80px'}}>Craft</span> <br /> Wooden Houses      
-          </Typography>
+         </Typography>
          <Typography variant='h6'>
              We are always ready to deliver quality
              wooden house to you.
@@ -37,23 +40,23 @@ const Banner = () => {
       <Grid item xs={12} md={2}>
             <img src={offers1} alt="" />
             <Typography variant='h6'sx={{color:'white'}}>Eco Materials</Typography>
-       </Grid>
+      </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers2} alt="" />
             <Typography variant='h6'sx={{color:'white'}}>Solar Energy</Typography>
-       </Grid>
+      </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers3} alt="" />
             <Typography variant='h6'sx={{color:'white'}}>Furniture</Typography>
-       </Grid>
+      </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers4} alt="" />
             <Typography variant='h6'sx={{color:'white'}}>Water Supply</Typography>
-       </Grid>
+      </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers5} alt="" />
             <Typography variant='h6'sx={{color:'white'}}>CCTV Reply</Typography>
-       </Grid>
+      </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers6} alt="" />
             <Typography variant='h6'sx={{color:'white'}}>Interior Design</Typography>

@@ -40,9 +40,12 @@ const Navigation = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             </Typography>
               <Link to='/home' style={style}><Button color="inherit">Home</Button></Link>      
-              <Link to='/about' style={style}><Button color="inherit">About</Button></Link>      
+              <Link to='/about' style={style}><Button color="inherit">Explore</Button></Link>      
               <Link to='/products' style={style}><Button color="inherit">Products</Button></Link>      
               <Link to='/reviews' style={style}><Button color="inherit">Reviews</Button></Link>      
+            {
+              user.email &&<Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>  
+              }    
             {
               user.email?<Button onClick={logout} style={{backgroundColor: '#e1c265',fontSize:'15px'}}>Log Out</Button>:
               <Link to='/login' style={style}>
@@ -52,7 +55,7 @@ const Navigation = () => {
             {
               user.email && <Avatar
               alt="Remy Sharp"
-              src={user.photoURL}
+              src={user?.photoURL}
               sx={{ width: 45, height: 45,m:1 }}
             />
             }
