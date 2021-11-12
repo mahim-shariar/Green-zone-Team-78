@@ -52,6 +52,11 @@ const SendReviews = () => {
                     style={style}
                     placeholder='Description'
                 />
+                <input
+                {...register("date")}
+                    type="date"
+                    style={style}
+                />
                 <input type="number" {...register("rating")}
                     style={style}
                     placeholder='Rating'
