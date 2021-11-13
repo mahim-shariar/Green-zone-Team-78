@@ -7,6 +7,7 @@ import Dashboard from './pages/Home/Home/Dashboard/Dashboard';
 import MyOrders from './pages/Home/Home/Dashboard/MyOrders';
 import Payment from './pages/Home/Home/Dashboard/Payment';
 import SendReviews from './pages/Home/Home/Dashboard/SendReviews';
+import Explores from './pages/Home/Home/Explores/Explores';
 import Login from './pages/Home/Home/Login/Login/Login';
 import Register from './pages/Home/Home/Login/Register/Register';
 import MeetBenefits from './pages/Home/Home/MeetBenefits/MeetBenefits';
@@ -30,6 +31,9 @@ function App() {
            </Route>
           <Route exact path='/products'>
               <Products></Products>
+           </Route>
+          <Route exact path='/explores'>
+              <Explores></Explores>
            </Route>
           <PrivateRoute path='/purchaseProducts/:productId'>
               <PurchaseProducts></PurchaseProducts>

@@ -1,4 +1,4 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 // import { useForm } from "react-hook-form";
 
@@ -43,8 +43,8 @@ const MakeAdmin = () => {
     }
     
     return (
-        <div>
-            <h2>Make an admin</h2>
+        <div style={{border:'1px solid black',padding:'10px'}}>
+            <Typography variant='h4' sx={{fontWeight:'800',backgroundColor:'gray'}}>Make an Admin</Typography> <hr />
             {/* <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("Email")}
                     type="email"
@@ -54,12 +54,12 @@ const MakeAdmin = () => {
              </form> */}
              <form onSubmit={handleAdminSubmit}>
                 <TextField
-                    sx={{ width: '50%' }}
+                    sx={{ width: '40%' }}
                     label="Email"
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" /> <br /> <br />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                <Button type="submit" variant="contained" size='large' color='success'>Make Admin</Button>
             </form>
             {success && <Alert severity="success">Made Admin successfully!</Alert>}
           </div>

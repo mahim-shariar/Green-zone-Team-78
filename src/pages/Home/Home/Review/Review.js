@@ -28,7 +28,7 @@ const ExpandMore = styled((props) => {
 
 
 const Review = (props) => {
-  const { name, rating, image, description }=props.review;
+  const { name, rating, image, description,date }=props.review;
   const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
@@ -45,7 +45,7 @@ const Review = (props) => {
             </IconButton>
           }
           title={name}
-          subheader="September 14, 2021"
+          subheader={date}
           />
            <Typography component="legend">Rating</Typography>
            <Rating name="readonly" value={rating} readOnly/>

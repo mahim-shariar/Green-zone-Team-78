@@ -41,7 +41,7 @@ const Navigation = () => {
             </Typography>
             <Link to='/home' style={style}><Button color="inherit">Home</Button></Link>
             <Link to='/meetBenefit' style={style}><Button color="inherit">About</Button></Link> 
-              <Link to='/products' style={style}><Button color="inherit">Explore</Button></Link>                  
+              <Link to='/explores' style={style}><Button color="inherit">Explore</Button></Link>                  
               <Link to='/reviews' style={style}><Button color="inherit">Reviews</Button></Link>      
             {
               user.email &&<Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>  

@@ -96,7 +96,7 @@ const PurchaseProducts = () => {
                 placeholder='Phone Number'
               />
                <input
-                {...register("number", { required: true })}
+                {...register("price", { required: true })}
                 style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
                 type="number"
                 defaultValue={purchase?.discountPrice}

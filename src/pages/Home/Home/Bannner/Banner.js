@@ -8,6 +8,7 @@ import offers3 from '../../../../image/icon-img/service-icon-3.png';
 import offers4 from '../../../../image/icon-img/service-icon-4.png';
 import offers5 from '../../../../image/icon-img/service-icon-5.png';
 import offers6 from '../../../../image/icon-img/service-icon-6.png';
+import { Link } from 'react-router-dom';
 
 
 const style = {
@@ -28,9 +29,10 @@ const Banner = () => {
              We are always ready to deliver quality
              wooden house to you.
          </Typography>
-         <Button sx={{color:'white',mt:3,backgroundColor:'#e1c265'}} variant="outlined" size="large">
+        <Link to='/explores' style={{textDecoration:'none'}}> <Button sx={{color:'white',mt:3,backgroundColor:'#e1c265'}} variant="outlined" size="large">
           Explore More
-        </Button>       
+        </Button>
+        </Link>
         </Grid>
         <Grid item xs={12} md={6}>
           <img height='100%' width='100%' src={Bannerimage} alt="" />

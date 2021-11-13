@@ -11,7 +11,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Avatar, Button } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import ReviewsIcon from '@mui/icons-material/Reviews';
@@ -32,14 +32,14 @@ import AdminRoute from '../Login/AdminRoute/AdminRoute';
 
 
 const style = {
-
-    textDecoration: 'none'
+  textDecoration: 'none',
+  color:'black'
 }
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const { logout,admin} = useAuth();
+  const { logout,admin,user} = useAuth();
 
      const { window } = props;
      const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -52,52 +52,65 @@ function Dashboard(props) {
    const drawer = (
     <div>
         <Toolbar />
-           
+       <Avatar alt="Cindy Baker" src={user.photoURL} style={{ margin: 'auto', marginBottom: '10px' }} />
+       <Typography variant='h6' sx={{color:'#63bcef'}}>{user.displayName}</Typography>
       <Divider />
-      <List>
+
+       {/* Admin Route */}
+       {admin ? <Box>
+        <Link to='/home' style={style}>
+         <Button color='inherit'>Home</Button>
+         </Link> <br />
+         
+        <Link to={`${url}/manageAllOrder`} style={style}>
+         <Button color='inherit'>Manage All Order</Button>
+       </Link>
+
+       <Link to={`${url}/addProducts`} style={style}>
+         <Button color='inherit'>Add A Product</Button>
+       </Link>
+
+       <Link to={`${url}/manageProducts`} style={style}>
+         <Button color='inherit'>Manage Products</Button>
+       </Link>
+
+       <Link to={`${url}/makeAdmin`} style={style}>
+         <Button color='inherit'> Make Admin</Button>
+       </Link> <br />
+
+       <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'>Log Out</Button></Link>
+       </Box> :
+         <Box>
+
+             <List>
         <Link to='/home' style={style}>
            <Button><HomeIcon />Home</Button>
         </Link>        
-      </List>
+           </List>
+           
       <List>
         <Link to='/myOrder' style={style}>
            <Button><ShoppingBagIcon />My Orders</Button>
         </Link>       
-      </List>
+           </List>
+           
       <List>
         <Link to='/addReviews' style={style}>
            <Button><ReviewsIcon />Review</Button>
         </Link>       
-      </List>
+           </List>
+           
       <List>
         <Link to='/payment' style={style}>
            <Button><PaymentIcon />Payment</Button>
         </Link>       
-      </List>
+           </List>
+           
         <Link to='/home' style={style}>
            <Button onClick={logout}><LogoutIcon />Log Out</Button>
-       </Link>
-
-       {/* Admin Route */}
-       {admin && <Box>
-        <Link to={`${url}/manageAllOrder`}>
-         <Button color='inherit'>Manage All Order</Button>
-       </Link>
-
-       <Link to={`${url}/addProducts`}>
-         <Button color='inherit'>Add A Product</Button>
-       </Link>
-
-       <Link to={`${url}/manageProducts`}>
-         <Button color='inherit'>Manage Products</Button>
-       </Link>
-
-       <Link to={`${url}/makeAdmin`}>
-         <Button color='inherit'> Make Admin</Button>
-       </Link> <br />
-
-       <Link to={`${url}/logout`}><Button onClick={logout} color='inherit'>Log Out</Button></Link>
-         </Box>}       
+        </Link>
+           
+         </Box>}
     </div>
   );
 
@@ -107,6 +120,7 @@ function Dashboard(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
+        style={{backgroundColor:'#574437'}}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
