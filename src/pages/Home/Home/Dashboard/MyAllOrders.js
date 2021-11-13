@@ -1,6 +1,7 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const MyAllOrders = (props) => {
   const { name, discountPrice, date, image,_id } = props.order;
@@ -13,7 +14,9 @@ const MyAllOrders = (props) => {
       .then(res => res.json())
       .then(data => {
         if (data.deletedCount) {
-          alert('Are You Sure Want To Delete?')
+          Swal.fire(
+            'Confirm to Delete?',
+          )
         }
       })
   }

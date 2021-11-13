@@ -11,6 +11,7 @@ import Explores from './pages/Home/Home/Explores/Explores';
 import Login from './pages/Home/Home/Login/Login/Login';
 import Register from './pages/Home/Home/Login/Register/Register';
 import MeetBenefits from './pages/Home/Home/MeetBenefits/MeetBenefits';
+import NotFound from './pages/Home/Home/NotFound/NotFound';
 import Products from './pages/Home/Home/Products/Products';
 import PurchaseProducts from './pages/Home/Home/PurchaseProducts/PurchaseProducts';
 import Reviews from './pages/Home/Home/Reviews/Reviews';
@@ -64,6 +65,9 @@ function App() {
            </Route>
           <Route exact path='/addProducts'>
               <AddProducts></AddProducts>
+           </Route>
+          <Route exact path='*'>
+              <NotFound></NotFound>
            </Route>
         </Switch>
       </BrowserRouter>

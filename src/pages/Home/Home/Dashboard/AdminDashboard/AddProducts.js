@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from "react-hook-form";
+import Swal from 'sweetalert2';
 import productsBg from '../../../../../image/addProducts-bg.jpg';
 
 
@@ -28,7 +29,9 @@ const AddProducts = () => {
             .then(data => {
                 console.log(data)
                 if (data.insertedId) {
-                    alert('Successfully Added Products')
+                    Swal.fire(
+                        'Successfully Added Product',
+                      )
                     reset()
                 }
             })
