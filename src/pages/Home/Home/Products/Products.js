@@ -13,7 +13,7 @@ const Products = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/addProducts')
+        fetch('https://stormy-wave-87937.herokuapp.com/addProducts')
             .then(res => res.json())
             .then(data=>setProducts(data.slice(0,6)))
     },[])

@@ -7,7 +7,7 @@ const MyAllOrders = (props) => {
   const { name, discountPrice, date, image,_id } = props.order;
   
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/myAllOrder/${id}`, {
+    fetch(`https://stormy-wave-87937.herokuapp.com/myAllOrder/${id}`, {
       method: 'DELETE',
       // headers: { 'content-type': 'application/json' },
     })

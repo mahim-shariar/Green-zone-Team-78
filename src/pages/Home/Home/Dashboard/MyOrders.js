@@ -7,7 +7,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     const { user } = useAuth();
     useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user.email}`)
+        fetch(`https://stormy-wave-87937.herokuapp.com/myOrders/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data)

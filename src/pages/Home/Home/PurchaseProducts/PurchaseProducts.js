@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 
 const PurchaseProducts = () => {
@@ -11,14 +12,14 @@ const PurchaseProducts = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/purchaseProducts/${productId}`)
+        fetch(`https://stormy-wave-87937.herokuapp.com/purchaseProducts/${productId}`)
             .then(res => res.json())
             .then(data=>setPurchase(data[0]))
     }, [productId])
   
       const { register, handleSubmit} = useForm();
       const onSubmit = data => {
-           fetch("http://localhost:5000/confirmOrder", {
+           fetch("https://stormy-wave-87937.herokuapp.com/confirmOrder", {
                  method: "POST",
                  headers: { "content-type": "application/json" },
                  body: JSON.stringify(data),
@@ -26,7 +27,15 @@ const PurchaseProducts = () => {
                  .then((res) => res.json())
                  .then((data) => {
                    if (data.insertedId) {
-                     alert("Ordered Ok")
+                    Swal.fire({
+                      title: 'Successfully Order Completed',
+                      showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                      },
+                      hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                      }
+                    })
                      console.log(data);
                    }
                  });                

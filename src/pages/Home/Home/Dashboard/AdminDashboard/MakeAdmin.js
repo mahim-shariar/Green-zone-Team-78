@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     // const onSubmit = data => {
     //     console.log(data)
     //     const user = { email };
-    //     fetch('http://localhost:5000/users/admin', {
+    //     fetch('https://stormy-wave-87937.herokuapp.com/users/admin', {
     //         method: 'put',
     //         headers: { 'content-type': 'application/json' },
     //         body: JSON.stringify(user)
@@ -25,7 +25,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://stormy-wave-87937.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

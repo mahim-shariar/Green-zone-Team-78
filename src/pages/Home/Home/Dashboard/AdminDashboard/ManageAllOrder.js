@@ -7,7 +7,7 @@ const ManageAllOrder = () => {
     
   
     useEffect(() => {
-    const url = 'http://localhost:5000/allorders';
+    const url = 'https://stormy-wave-87937.herokuapp.com/allorders';
     fetch(url)
       .then(res => res.json())
       .then(data=>setManageOrders(data))
