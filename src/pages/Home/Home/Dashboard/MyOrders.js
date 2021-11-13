@@ -17,7 +17,7 @@ const MyOrders = () => {
 
     return (
         <Container>
-            <h2>Here Is my all Orders {orders?.length}</h2>
+            <h1 style={{color:'#99402c',fontWeight:'900'}}> Please Check Your Orders</h1> <hr />
             <Grid container spacing={2}>
             {
             orders.map(order => <MyAllOrders

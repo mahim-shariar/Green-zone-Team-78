@@ -2,13 +2,13 @@ import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } f
 import React from 'react';
 
 const MyAllOrders = (props) => {
-  const { name, description, price, discountPrice, image } = props.order;
+  const { name,discountPrice,date, image } = props.order;
     return (
         <Grid item xs={12} md={3}>
             <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
-        height="140"
+        height="220"
         image={image}
         alt="green iguana"
       />
@@ -17,10 +17,7 @@ const MyAllOrders = (props) => {
           {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {price}
+          {date}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {discountPrice}
@@ -29,8 +26,8 @@ const MyAllOrders = (props) => {
         <CardActions>
         <Button size="small" variant='contained'>Delete</Button>
          </CardActions>
-          </Card>
-            </Grid>
+        </Card>
+        </Grid>
     );
 };
 

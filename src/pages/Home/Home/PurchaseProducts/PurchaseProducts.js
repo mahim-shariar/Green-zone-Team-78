@@ -4,14 +4,6 @@ import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 
-const style2 = {
-    margin: '10px',
-    padding: '10px',
-    borderRadius: '5px',
-    marginTop: '2%',
-    width:'60%'
-}
-
 
 const PurchaseProducts = () => {
     const { productId } = useParams();
@@ -42,7 +34,7 @@ const PurchaseProducts = () => {
     return (
         <Container sx={{ flexGrow: 1,mt:5 }}>
          <Grid container spacing={2}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4}>
           <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
@@ -70,19 +62,19 @@ const PurchaseProducts = () => {
             <input
                 {...register("name")}
                 defaultValue={purchase?.name}
-                style={style2}
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
               />
                 
               <input
                 {...register("Name")}
                  placeholder="Your Name"
-                style={style2}
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
                 defaultValue={user?.displayName}            
               />
                 <input
               {...register("Email")}
                 placeholder="Email"
-                style={style2}
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
                 type="email"
                 defaultValue={user?.email}     
               />
@@ -90,22 +82,22 @@ const PurchaseProducts = () => {
               <input
                 {...register("Address")}
                  placeholder="Address"
-                style={style2}          
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}          
               />
                  <input
                 {...register("date")}
                 type="date"
-                style={{padding:'10px',width:'60%',borderRadius:'5px'}}            
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}            
               />
                <input
                 {...register("number", { required: true })}
-                style={style2}
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
                 type="number"
                 placeholder='Phone Number'
               />
                <input
                 {...register("number", { required: true })}
-                style={style2}
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
                 type="number"
                 defaultValue={purchase?.discountPrice}
                 placeholder='Discount Price'
@@ -113,11 +105,11 @@ const PurchaseProducts = () => {
                <input
                 {...register("image", { required: true })}
                  defaultValue={purchase?.image}
-                style={style2}
+                style={{width:'150%',padding:'15px',margin:'5px',borderRadius:'5px'}}
                 placeholder="Image"
               />
                 <input
-                style={{backgroundColor:'#574437',width:'64%',padding:'10px',color:'white',border:'1px solid gray'}}
+                style={{width:'165%',padding:'5px',margin:'5px',borderRadius:'5px',fontSize:'20px',backgroundColor:'#574437',color:'white'}}
                 type="submit"
                 value="Order Here"
               />
