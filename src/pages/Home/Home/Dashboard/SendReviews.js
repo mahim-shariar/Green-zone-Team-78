@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from "react-hook-form";
+import useAuth from '../../../hooks/useAuth';
 // import productsBg from '../../../../../image/addProducts-bg.jpg';
 
 
@@ -17,6 +18,7 @@ const style = {
 // }
 
 const SendReviews = () => {
+    const {user}=useAuth()
     const { register, handleSubmit,reset} = useForm();
     const onSubmit = data => {
         fetch('http://localhost:5000/addReviews', {
@@ -42,6 +44,7 @@ const SendReviews = () => {
                 <input {...register("name")}
                     style={style}
                     placeholder='Name'
+                    defaultValue={user.displayName}
                 />
                 <input {...register("profession")}
                     style={style}
@@ -64,6 +67,7 @@ const SendReviews = () => {
                 <input type="imageUrl" {...register("image")}
                     style={style}
                     placeholder='Image'
+                    defaultValue={user.photoURL}
                 />
                 <input type="submit"
                     style={style} />

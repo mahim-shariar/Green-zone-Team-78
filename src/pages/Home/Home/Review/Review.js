@@ -12,7 +12,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Grid } from '@mui/material';
+import { Grid, Rating } from '@mui/material';
 
 
 const ExpandMore = styled((props) => {
@@ -29,7 +29,7 @@ const ExpandMore = styled((props) => {
 
 const Review = (props) => {
   const { name, rating, image, description }=props.review;
-    const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
     const handleExpandClick = () => {
       setExpanded(!expanded);
@@ -46,13 +46,12 @@ const Review = (props) => {
           }
           title={name}
           subheader="September 14, 2021"
-        />
-        <CardHeader
-          subheader={rating}
-        />
-        <CardMedia
+          />
+           <Typography component="legend">Rating</Typography>
+           <Rating name="readonly" value={rating} readOnly/>
+          <CardMedia
           component="img"
-          height="200"
+          height="240"
           image={image}
           alt=""
         />

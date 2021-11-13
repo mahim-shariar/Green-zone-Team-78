@@ -6,12 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -23,6 +18,18 @@ import ReviewsIcon from '@mui/icons-material/Reviews';
 import PaymentIcon from '@mui/icons-material/Payment';
 import LogoutIcon from '@mui/icons-material/Logout';
 import useAuth from '../../../hooks/useAuth';
+import {
+  Route,
+  Switch,
+  useRouteMatch
+} from "react-router-dom";
+import Reviews from '../Reviews/Reviews';
+import MakeAdmin from './AdminDashboard/MakeAdmin';
+import ManageProducts from './AdminDashboard/ManageProducts';
+import AddProducts from './AdminDashboard/AddProducts';
+import ManageAllOrder from './AdminDashboard/ManageAllOrder';
+import AdminRoute from '../Login/AdminRoute/AdminRoute';
+
 
 const style = {
 
@@ -32,11 +39,12 @@ const style = {
 const drawerWidth = 240;
 
 function Dashboard(props) {
-    const { logout } = useAuth();
+  const { logout,admin} = useAuth();
 
      const { window } = props;
      const [mobileOpen, setMobileOpen] = React.useState(false);
-
+     
+  let { path, url } = useRouteMatch();
      const handleDrawerToggle = () => {
      setMobileOpen(!mobileOpen);
      };
@@ -52,7 +60,7 @@ function Dashboard(props) {
         </Link>        
       </List>
       <List>
-        <Link to='/myorders' style={style}>
+        <Link to='/myOrder' style={style}>
            <Button><ShoppingBagIcon />My Orders</Button>
         </Link>       
       </List>
@@ -66,22 +74,30 @@ function Dashboard(props) {
            <Button><PaymentIcon />Payment</Button>
         </Link>       
       </List>
-      <List>
         <Link to='/home' style={style}>
            <Button onClick={logout}><LogoutIcon />Log Out</Button>
-        </Link>       
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+       </Link>
+
+       {/* Admin Route */}
+       {admin && <Box>
+        <Link to={`${url}/manageAllOrder`}>
+         <Button color='inherit'>Manage All Order</Button>
+       </Link>
+
+       <Link to={`${url}/addProducts`}>
+         <Button color='inherit'>Add A Product</Button>
+       </Link>
+
+       <Link to={`${url}/manageProducts`}>
+         <Button color='inherit'>Manage Products</Button>
+       </Link>
+
+       <Link to={`${url}/makeAdmin`}>
+         <Button color='inherit'> Make Admin</Button>
+       </Link> <br />
+
+       <Link to={`${url}/logout`}><Button onClick={logout} color='inherit'>Log Out</Button></Link>
+         </Box>}       
     </div>
   );
 
@@ -149,20 +165,27 @@ function Dashboard(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
+
+        {/* nested route */}
+        
+        <Switch>
+        <Route exact path={path}>
+          <Reviews></Reviews>
+        </Route>
+          <AdminRoute path={`${path}/manageAllOrder`}>
+            <ManageAllOrder></ManageAllOrder>
+        </AdminRoute>
+          <AdminRoute path={`${path}/addProducts`}>
+            <AddProducts></AddProducts>
+        </AdminRoute>
+          <AdminRoute path={`${path}/manageProducts`}>
+            <ManageProducts></ManageProducts>
+        </AdminRoute>
+          <AdminRoute path={`${path}/makeAdmin`}>
+            <MakeAdmin></MakeAdmin>
+        </AdminRoute>
+      </Switch>
+
       </Box>
     </Box>
   );

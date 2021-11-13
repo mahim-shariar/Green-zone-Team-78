@@ -13,6 +13,7 @@ import MeetBenefits from './pages/Home/Home/MeetBenefits/MeetBenefits';
 import Products from './pages/Home/Home/Products/Products';
 import PurchaseProducts from './pages/Home/Home/PurchaseProducts/PurchaseProducts';
 import Reviews from './pages/Home/Home/Reviews/Reviews';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -30,9 +31,9 @@ function App() {
           <Route exact path='/products'>
               <Products></Products>
            </Route>
-          <Route exact path='/purchaseProducts/:productId'>
+          <PrivateRoute path='/purchaseProducts/:productId'>
               <PurchaseProducts></PurchaseProducts>
-           </Route>
+           </PrivateRoute>
           <Route exact path='/meetBenefit'>
               <MeetBenefits></MeetBenefits>
            </Route>
@@ -45,13 +46,13 @@ function App() {
           <Route exact path='/register'>
               <Register></Register>
            </Route>
-          <Route exact path='/dashboard'>
+          <Route path='/dashboard'>
               <Dashboard></Dashboard>
            </Route>
           <Route exact path='/payment'>
               <Payment></Payment>
            </Route>
-          <Route exact path='/myorders'>
+          <Route exact path='/myOrder'>
               <MyOrders></MyOrders>
            </Route>
           <Route exact path='/addReviews'>

@@ -1,10 +1,10 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 
-const style = {
+const style2 = {
     margin: '10px',
     padding: '10px',
     borderRadius: '5px',
@@ -23,11 +23,22 @@ const PurchaseProducts = () => {
             .then(res => res.json())
             .then(data=>setPurchase(data[0]))
     }, [productId])
-    // console.log(purchase);
- 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-
+  
+      const { register, handleSubmit} = useForm();
+      const onSubmit = data => {
+           fetch("http://localhost:5000/confirmOrder", {
+                 method: "POST",
+                 headers: { "content-type": "application/json" },
+                 body: JSON.stringify(data),
+             })
+                 .then((res) => res.json())
+                 .then((data) => {
+                   if (data.insertedId) {
+                     alert("Ordered Ok")
+                     console.log(data);
+                   }
+                 });                
+};
     return (
         <Container sx={{ flexGrow: 1,mt:5 }}>
          <Grid container spacing={2}>
@@ -54,42 +65,57 @@ const PurchaseProducts = () => {
         </Card>
                     
           </Grid>
-         <Grid item xs={12} md={6}>
-         <form onSubmit={handleSubmit(onSubmit)}>
-              <input
+         <Grid item xs={12} md={6}>           
+          <form onSubmit={handleSubmit(onSubmit)} style={{display:"flex",flexDirection:'column',width:'40%',margin:'auto'}}>
+            <input
                 {...register("name")}
-                defaultValue={purchase.name}
-                style={style}
+                defaultValue={purchase?.name}
+                style={style2}
               />
-              <br />
+                
               <input
                 {...register("Name")}
                  placeholder="Your Name"
-                style={style}
-                defaultValue={user.displayName}            
+                style={style2}
+                defaultValue={user?.displayName}            
               />
-              <br />
+                <input
+              {...register("Email")}
+                placeholder="Email"
+                style={style2}
+                type="email"
+                defaultValue={user?.email}     
+              />
+                
               <input
+                {...register("Address")}
+                 placeholder="Address"
+                style={style2}          
+              />
+                 <input
                 {...register("date")}
                 type="date"
                 style={{padding:'10px',width:'60%',borderRadius:'5px'}}            
               />
-              <br />
-              <input
-                {...register("price", { required: true })}
-                defaultValue={purchase.discountPrice}
-                style={style}
-                placeholder='price'
+               <input
+                {...register("number", { required: true })}
+                style={style2}
+                type="number"
+                placeholder='Phone Number'
               />
-              <br />
-              <input
+               <input
+                {...register("number", { required: true })}
+                style={style2}
+                type="number"
+                defaultValue={purchase?.discountPrice}
+                placeholder='Discount Price'
+              />
+               <input
                 {...register("image", { required: true })}
-                 defaultValue={purchase.image}
-                 style={style}
+                 defaultValue={purchase?.image}
+                style={style2}
+                placeholder="Image"
               />
-              <br />
-              {errors.exampleRequired && <span>This field is required</span>}
-
                 <input
                 style={{backgroundColor:'#574437',width:'64%',padding:'10px',color:'white',border:'1px solid gray'}}
                 type="submit"
