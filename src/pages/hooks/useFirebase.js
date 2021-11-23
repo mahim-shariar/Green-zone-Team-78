@@ -42,7 +42,7 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-
+                setUser(userCredential.user);
                 // redirect
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -54,19 +54,19 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const signInWithGoogle = (location, history,email,name) => {
+    const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                setUser(user);
                 // redirect
                 const destination = location?.state?.from || '/';
-                history.replace(destination);
+                history.push(destination);
                 setAuthError('');
                
-                const newUser = {email, displayName: name };
-                setUser(newUser);
+                // const newUser = {email, displayName: name };
+                
                 //update to db 
                 saveOneTimeUser(result.user.email, result.user.displayName)
                 

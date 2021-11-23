@@ -20,7 +20,7 @@ const Reviews = () => {
     },[])
     return (
         <div style={style}>
-            <Typography variant='h6' sx={{p:2,color:'#e1c265'}}>Reviews</Typography> <hr />
+            <Typography variant='h6' sx={{p:2,color:'#e1c265'}}>Feedback</Typography> <hr />
             <Typography variant='h3' sx={{color:'#e1c265',fontWeight:'900'}}>A few words from our happy clients</Typography>
             <Container sx={{p:8}}>
             <Grid container spacing={2}>

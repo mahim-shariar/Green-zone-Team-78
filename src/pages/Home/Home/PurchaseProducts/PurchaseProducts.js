@@ -36,7 +36,7 @@ const PurchaseProducts = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                       }
                     })
-                     console.log(data);
+                    //  console.log(data);
                    }
                  });                
 };

@@ -29,11 +29,15 @@ import ManageProducts from './AdminDashboard/ManageProducts';
 import AddProducts from './AdminDashboard/AddProducts';
 import ManageAllOrder from './AdminDashboard/ManageAllOrder';
 import AdminRoute from '../Login/AdminRoute/AdminRoute';
-
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import BadgeIcon from '@mui/icons-material/Badge';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const style = {
-  textDecoration: 'none',
-  color:'black'
+  textDecoration: 'none', 
+  color:'#0561c1'
 }
 
 const drawerWidth = 240;
@@ -50,35 +54,36 @@ function Dashboard(props) {
      };
 
    const drawer = (
-    <div>
-        <Toolbar />
+     <div>
+       <Typography variant='h6' sx={{color:'#0d3562',backgroundColor:'#d5d9dc',p:2}}><AccountCircleIcon/> Profile</Typography>
+       <Toolbar />     
        <Avatar alt="Cindy Baker" src={user.photoURL} style={{ margin: 'auto', marginBottom: '10px' }} />
-       <Typography variant='h6' sx={{color:'#63bcef'}}>{user.displayName}</Typography>
+       <Typography variant='h6' sx={{color:'#0d3562'}}>{user.displayName}</Typography> <br />
       <Divider />
 
        {/* Admin Route */}
        {admin ? <Box>
-        <Link to='/home' style={style}>
-         <Button color='inherit'>Home</Button>
-         </Link> <br />
+         <Link to='/home' style={style}>
+         <Button color='inherit'><HomeIcon/>Home</Button>
+         </Link><br />
          
         <Link to={`${url}/manageAllOrder`} style={style}>
-         <Button color='inherit'>Manage All Order</Button>
+         <Button color='inherit'><BadgeIcon/> Manage All Order</Button>
        </Link>
 
        <Link to={`${url}/addProducts`} style={style}>
-         <Button color='inherit'>Add A Product</Button>
+         <Button color='inherit'> <ProductionQuantityLimitsIcon/> Add A Product</Button>
        </Link>
 
        <Link to={`${url}/manageProducts`} style={style}>
-         <Button color='inherit'>Manage Products</Button>
+         <Button color='inherit'><ManageAccountsIcon/> Manage Products</Button>
        </Link>
 
        <Link to={`${url}/makeAdmin`} style={style}>
-         <Button color='inherit'> Make Admin</Button>
+         <Button color='inherit'><AdminPanelSettingsIcon/> Make Admin</Button>
        </Link> <br />
 
-       <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'>Log Out</Button></Link>
+       <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'><LogoutIcon/> Log Out</Button></Link>
        </Box> :
          <Box>
 
@@ -120,7 +125,7 @@ function Dashboard(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
-        style={{backgroundColor:'#574437'}}
+        style={{backgroundColor:'#d5d9dc',color:'#0d3562'}}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },

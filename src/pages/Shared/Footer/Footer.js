@@ -31,7 +31,7 @@ const Footer = () => {
             <Grid item xs={12} md={3}>
             <img
             style={{ backgroundColor: '#e1c265',padding:'10px'}}
-            src="http://barhouse.like-themes.com/wp-content/uploads/2018/05/logo-small.png"
+            src="https://i.ibb.co/B3nYkvY/logo-small.png"
             alt="" />
                 <Typography variant='body1' sx={{ color: '#e1c265' }}>We have over 10 years of experience, We take pride in delivering Intelligent Designs for clients all over the World.</Typography>
          <Button style={{color:'#e1c265'}}>Subscribe Us</Button>        

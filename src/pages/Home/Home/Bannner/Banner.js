@@ -1,6 +1,6 @@
 import { Button, Grid, Typography } from '@mui/material';
 import React from 'react';
-import Bannerimage from '../../../../image/house-g737061b63_1281.jpg';
+import BannerImage from '../../../../image/house-g737061b63_1281.jpg';
 import bg from '../../../../image/wood-g8358d2b1b_1280.jpg';
 import offers1 from '../../../../image/icon-img/service-icon-1.png';
 import offers2 from '../../../../image/icon-img/service-icon-2.png';
@@ -10,13 +10,11 @@ import offers5 from '../../../../image/icon-img/service-icon-5.png';
 import offers6 from '../../../../image/icon-img/service-icon-6.png';
 import { Link } from 'react-router-dom';
 
-
 const style = {
       backgroundImage: `url(${bg})`,
       backgroundAttachment: 'fixed',
       backgroundSize:'cover'
 }
-
 
 const Banner = () => {
     return (
@@ -35,7 +33,7 @@ const Banner = () => {
         </Link>
         </Grid>
         <Grid item xs={12} md={6}>
-          <img height='100%' width='100%' src={Bannerimage} alt="" />
+          <img height='100%' width='100%' src={BannerImage} alt="" />
          </Grid>
       </Grid>
       <Grid container spacing={2} sx={{backgroundColor:'#1f1a17'}}>
