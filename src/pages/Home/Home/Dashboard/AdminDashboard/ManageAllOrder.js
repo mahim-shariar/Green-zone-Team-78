@@ -19,8 +19,8 @@ const ManageAllOrder = () => {
     }, [])
    
   const handleDelete = (id) => {
-    console.log('handleDelete',id);
-    fetch(`http://localhost:5000/myAllOrders/${id}`, {
+    // console.log('handleDelete',id);
+    fetch(`https://stormy-wave-87937.herokuapp.com/myAllOrders/${id}`, {
       method: 'DELETE',
 
     })

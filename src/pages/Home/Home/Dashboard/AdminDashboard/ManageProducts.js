@@ -6,7 +6,7 @@ import ManageSingleProduct from './ManageSingleProduct';
 const ManageProducts = () => {
     const [manageProducts, setManageProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/addProducts')
+        fetch('https://stormy-wave-87937.herokuapp.com/addProducts')
             .then(res => res.json())
             .then(data=>setManageProducts(data))
     },[])

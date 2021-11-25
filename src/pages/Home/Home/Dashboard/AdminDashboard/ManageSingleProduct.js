@@ -9,7 +9,7 @@ const ManageSingleProduct = (props) => {
     const { name, image, description, price, discountPrice,_id} = props.manageProduct;
     
     const handleDelete = id => {
-      fetch(`http://localhost:5000/myAllOrder/${id}`, {
+      fetch(`https://stormy-wave-87937.herokuapp.com/myAllOrder/${id}`, {
          method: 'DELETE'
     })
         .then(res => res.json())
