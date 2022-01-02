@@ -2,7 +2,7 @@
 
 This projects live link is [Barhouse wooden craft houses](barhouse-craft-wooden-house.web.app).
 
-## Available Scripts
+## Available Scriptss
 
 In the project directory, you can run:
 
