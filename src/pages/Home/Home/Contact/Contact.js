@@ -4,7 +4,7 @@ import iconPhone from '../../../../image/icon-img/icon-phone.png';
 
 const Contact = () => {
     return (
-        <div style={{backgroundColor:'#e1c265',marginTop:'5%',padding:'5%'}}>
+        <div style={{backgroundColor:'#e1c265',padding:'5%'}}>
             <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
                 <Typography variant='h5' sx={{color:'white',fontWeight:'800'}}>24/7 Call Center</Typography>
