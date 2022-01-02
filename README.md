@@ -1,6 +1,6 @@
 # Getting Started with Barhouse Wooden Craft Houses
 
-This projects live link is [Barhouse wooden craft houses](barhouse-craft-wooden-house.web.app).
+This projects live link is [Barhouse wooden craft houses](https://barhouse-craft-wooden-house.web.app/).
 
 ## Available Scriptss
 
