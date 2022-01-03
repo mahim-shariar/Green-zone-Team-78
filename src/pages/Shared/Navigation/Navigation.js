@@ -18,6 +18,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import './Nav.css'
 
 const style = {
     textDecoration:'none',
@@ -109,9 +110,9 @@ const Navigation = () => {
               user.email &&<Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>  
               }    
             {
-              user.email?<Button onClick={logout} style={{backgroundColor: '#e1c265',fontSize:'15px'}}>Log Out</Button>:
+              user.email?<Button onClick={logout} style={{backgroundColor: '#e1c265',fontSize:'15px',color:'white'}}>Log Out</Button>:
               <Link to='/login' style={style}>
-            <Button style={{backgroundColor: '#e1c265',fontSize:'15px'}}>Login</Button>
+            <Button style={{backgroundColor: '#e1c265',fontSize:'15px',color:'white'}}>Login</Button>
             </Link>
             }
               </Box>

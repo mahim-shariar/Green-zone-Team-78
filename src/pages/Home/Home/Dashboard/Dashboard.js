@@ -34,6 +34,7 @@ import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import BadgeIcon from '@mui/icons-material/Badge';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import CheckOutForm from './Payment';
 
 const style = {
   textDecoration: 'none', 
@@ -202,6 +203,9 @@ function Dashboard(props) {
         </AdminRoute>
           <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
+        </AdminRoute>
+        <AdminRoute path={`${path}/payment`}>
+            <CheckOutForm></CheckOutForm>
         </AdminRoute>
       </Switch>
 

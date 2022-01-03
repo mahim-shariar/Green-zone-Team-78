@@ -1,6 +1,7 @@
 import { Avatar, Button, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './../Products/Products.css'
 
 const SingleProduct = (props) => {
     const { name, description, image, price, discountPrice, _id } = props.product;
@@ -22,7 +23,7 @@ const SingleProduct = (props) => {
                 
                 <Typography variant='body2'
                     sx={{ color: '#9c5938' }}>
-                    {description.slice(0, 300)}
+                    {description.slice(0, 295)}
                     ..<italic style={{color:'red'}}>Read More</italic>
                 </Typography>
                 
@@ -47,8 +48,8 @@ const SingleProduct = (props) => {
                 </div>
                 <Link to={`/purchaseProducts/${_id}`} style={{textDecoration:'none'}}>
                 <Button
-                    variant='contained'
-                    sx={{ backgroundColor: '#574437'}}>Purchase Now</Button>
+                    className='btn-style'
+                    variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }}>Purchase Now</Button>
                 </Link>
          </Paper>
     </Grid>

@@ -1,7 +1,9 @@
-import { BrowserRouter,Switch,Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AuthProvider from './pages/Context/AuthProvider';
 import Home from './pages/Home/Home';
+import { ContactUs } from './pages/Home/Home/ContactUs/ContactUS';
 import AddProducts from './pages/Home/Home/Dashboard/AdminDashboard/AddProducts';
 import Dashboard from './pages/Home/Home/Dashboard/Dashboard';
 import MyOrders from './pages/Home/Home/Dashboard/MyOrders';
@@ -19,61 +21,64 @@ import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 
 function App() {
-  return (
-    <div className="App">
-      <AuthProvider>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/'>
-              <Home></Home>
-           </Route>
-          <Route exact path='/home'>
-              <Home></Home>
-           </Route>
-          <Route exact path='/products'>
-              <Products></Products>
-           </Route>
-          <Route exact path='/explores'>
-              <Explores></Explores>
-           </Route>
-          <PrivateRoute path='/purchaseProducts/:productId'>
-              <PurchaseProducts></PurchaseProducts>
-           </PrivateRoute>
-          <Route exact path='/meetBenefit'>
-              <MeetBenefits></MeetBenefits>
-           </Route>
-          <Route exact path='/reviews'>
-              <Reviews></Reviews>
-           </Route>
-          <Route exact path='/login'>
-              <Login></Login>
-           </Route>
-          <Route exact path='/register'>
-              <Register></Register>
-           </Route>
-          <Route path='/dashboard'>
-              <Dashboard></Dashboard>
-           </Route>
-          <Route exact path='/payment'>
-              <Payment></Payment>
-           </Route>
-          <Route exact path='/myOrder'>
-              <MyOrders></MyOrders>
-           </Route>
-          <Route exact path='/addReviews'>
-              <SendReviews></SendReviews>
-           </Route>
-          <Route exact path='/addProducts'>
-              <AddProducts></AddProducts>
-           </Route>
-          <Route exact path='*'>
-              <NotFound></NotFound>
-           </Route>
-        </Switch>
-      </BrowserRouter>
-      </AuthProvider>
-    </div>
-  );
+   return (
+      <div className="App">
+         <AuthProvider>
+            <BrowserRouter>
+               <Switch>
+                  <Route exact path='/'>
+                     <Home></Home>
+                  </Route>
+                  <Route exact path='/home'>
+                     <Home></Home>
+                  </Route>
+                  <Route exact path='/products'>
+                     <Products></Products>
+                  </Route>
+                  <Route exact path='/explores'>
+                     <Explores></Explores>
+                  </Route>
+                  <PrivateRoute path='/purchaseProducts/:productId'>
+                     <PurchaseProducts></PurchaseProducts>
+                  </PrivateRoute>
+                  <Route exact path='/meetBenefit'>
+                     <MeetBenefits></MeetBenefits>
+                  </Route>
+                  <Route exact path='/reviews'>
+                     <Reviews></Reviews>
+                  </Route>
+                  <Route exact path='/login'>
+                     <Login></Login>
+                  </Route>
+                  <Route exact path='/register'>
+                     <Register></Register>
+                  </Route>
+                  <Route path='/dashboard'>
+                     <Dashboard></Dashboard>
+                  </Route>
+                  <Route exact path='/payment'>
+                     <Payment></Payment>
+                  </Route>
+                  <Route exact path='/myOrder'>
+                     <MyOrders></MyOrders>
+                  </Route>
+                  <Route exact path='/addReviews'>
+                     <SendReviews></SendReviews>
+                  </Route>
+                  <Route exact path='/addProducts'>
+                     <AddProducts></AddProducts>
+                  </Route>
+                  <PrivateRoute path='/contact' >
+                     <ContactUs></ContactUs>
+                  </PrivateRoute>
+                  <Route exact path='*'>
+                     <NotFound></NotFound>
+                  </Route>
+               </Switch>
+            </BrowserRouter>
+         </AuthProvider>
+      </div>
+   );
 }
 
 export default App;

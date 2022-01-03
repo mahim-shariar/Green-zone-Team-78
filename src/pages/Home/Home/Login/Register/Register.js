@@ -4,14 +4,17 @@ import React, { useState } from 'react';
 import { NavLink,useHistory } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
 import Navigation from '../../../../Shared/Navigation/Navigation';
-import RegisterBanner from '../../../../../image/register.jpg';
+import { useLocation } from 'react-router-dom';
+import './Register.css'
+import { Google } from '@mui/icons-material';
 
 
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
     const history = useHistory();
-    const { user, registerUser, isLoading, authError } = useAuth();
+    const location = useLocation();
+    const { user, registerUser,signInWithGoogle, isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -19,6 +22,9 @@ const Register = () => {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
     }
     const handleLoginSubmit = e => {
         if (loginData.password !== loginData.password2) {
@@ -33,8 +39,8 @@ const Register = () => {
         <Container>
             <Navigation></Navigation>
             <Grid container spacing={2} sx={{ mt: 10 }}>
-                <Grid item xs={12} md={6}  style={{border:'1px solid gray',marginTop:'50px',backgroundColor:'#e1c265',color:'white'}}>
-                    <Typography variant="h4" gutterBottom>Please create an account</Typography> <hr />
+                <Grid item xs={12} md={6}  style={{borderRadius:'5px',marginTop:'50px',backgroundColor:'#f9d66f',color:'white'}}>
+                    <Typography variant="h4" gutterBottom sx={{color:'white'}} >Please create an account</Typography> <hr />
                     {!isLoading && <form onSubmit={handleLoginSubmit}>
                         <TextField
                             style={{ width: '75%', m: 1 }}
@@ -68,19 +74,23 @@ const Register = () => {
                             onBlur={handleOnBlur} 
                             variant="standard" /> <br /> <br />
 
-                        <Button style={{ width: '75%', m: 1 }} type="submit" variant="contained" sx={{backgroundColor:'#17a4be'}}>Register</Button> <br />
+                        <Button style={{ width: '75%', m: 1 }} className='btn-style' type="submit" variant="outlined" sx={{backgroundColor:'#574437',color:'white',border:'solid 1px #574437'}}>Register</Button> <br />
                         <NavLink
                             style={{ textDecoration: 'none' }}
                             to="/login">
                             <Button variant="text">Already Registered? Please Login</Button>
                         </NavLink>
+                        <p style={{color:'#574437'}} >------------OR-------------</p>
+                        <Button onClick={handleGoogleSignIn} className='btn-style'  variant="outlined" sx={{backgroundColor:'#574437',color:'white',border:'solid 1px #574437' ,marginY:5 , marginTop:0}}>
+                            <Google></Google>
+                        </Button>
                     </form>}
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">User Created successfully!</Alert>}
                     {authError && <Alert severity="error">{authError}</Alert>}
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%',marginTop:'5%' }} src={RegisterBanner} alt="" />
+                    <img style={{ width: '100%',marginTop:'5%' }} src='https://img.freepik.com/free-vector/messenger-concept-illustration_114360-860.jpg?size=626&ext=jpg' alt="" />
                 </Grid>
             </Grid>
         </Container>
