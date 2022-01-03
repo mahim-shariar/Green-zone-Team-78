@@ -20,8 +20,8 @@ const Products = () => {
     return (           
         <div >
              <Container sx={{ flexGrow: 1,p:5}}>
-             <Typography variant='h5' sx={{color:'#e4c977'}}>Shop Online</Typography>
-             <Typography variant='h3' sx={{mb:6,color:'#fff',fontWeight:900}}>Finished Real Estate</Typography>
+             <Typography variant='h5' sx={{color:'#ddb53e'}}>Shop Online</Typography>
+             <Typography variant='h3' sx={{mb:6,color:'#574437',fontWeight:900}}>Finished Real Estate</Typography>
             <Grid container spacing={2}>
                 {
                     products.map(product => <SingleProduct

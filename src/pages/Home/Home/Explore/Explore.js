@@ -32,7 +32,7 @@ const Explore = (props) => {
                     justifyContent: 'space-evenly'
                 }}>
                     <Typography variant='h5'>
-                        <s style={{
+                        <s className='text-muted' style={{
                             fontWeight: '900',
                             color: '#99402c'
                         }}>${price}</s>

@@ -67,7 +67,7 @@
     .b-footer {
     text-align: center;
     color: #000;
-    padding-top: 50px;
+    padding-top: 25px;
     }
     
     .l-footer p {
@@ -75,8 +75,13 @@
     color: #000;
     }  
     .l-footer img{
-        width: 50%;
+        height: 200px;
     } 
+    /* .features{
+        display: flex;
+        flex-direction: column;
+         justify-content: center;
+    } */
     
     @media screen and (min-width: 600px) {
     .r-footer > * {

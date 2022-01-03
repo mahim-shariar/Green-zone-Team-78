@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+.text-muted{
+  color: rgb(197, 118, 118) !important;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -18,11 +18,12 @@ import Products from './pages/Home/Home/Products/Products';
 import PurchaseProducts from './pages/Home/Home/PurchaseProducts/PurchaseProducts';
 import Reviews from './pages/Home/Home/Reviews/Reviews';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import Services from './pages/Home/Home/Services/Services';
 
 
 function App() {
    return (
-      <div className="App">
+      <div className="App" style={{backgroundColor:'D9D9D9'}} >
          <AuthProvider>
             <BrowserRouter>
                <Switch>
@@ -70,6 +71,9 @@ function App() {
                   </Route>
                   <PrivateRoute path='/contact' >
                      <ContactUs></ContactUs>
+                  </PrivateRoute>
+                  <PrivateRoute path='/services' >
+                     <Services></Services>
                   </PrivateRoute>
                   <Route exact path='*'>
                      <NotFound></NotFound>
