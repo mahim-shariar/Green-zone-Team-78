@@ -1,13 +1,12 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import { Button,Card, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import React,{useState} from 'react';
+import React from 'react';
 import Swal from 'sweetalert2';
-
+import { Link } from 'react-router-dom';
 
 const MyAllOrders = (props) => {
-  const { name, discountPrice, date, image,_id } = props.order;
-  const [control,setControl]=useState(false)
-
+  const { name, discountPrice, date, image,_id,payment } = props.order;
+  
   const handleDelete = (id) => {
     fetch(`https://stormy-wave-87937.herokuapp.com/myAllOrder/${id}`, {
       method: 'DELETE',
@@ -16,13 +15,11 @@ const MyAllOrders = (props) => {
       .then(res => res.json())
       .then(data => {
         if (data.deletedCount) {
-          setControl(!control)
           Swal.fire(
             'Confirm to Delete?',
           )
         }
-        // window.location.reload()       
-      })   
+      })
   }
 
     return (
@@ -48,6 +45,10 @@ const MyAllOrders = (props) => {
         <CardActions>
         <Button onClick={()=>handleDelete(_id)} variant="outlined" startIcon={<DeleteIcon />}>
         Delete
+      </Button>
+        <Button variant="outlined">
+             {payment ? 'Paid' :
+        <Link to={`/dashboard/payment/${_id}`}> <Button variant='="outlined'>Pay</Button> </Link>}
       </Button>
          </CardActions>
         </Card>
