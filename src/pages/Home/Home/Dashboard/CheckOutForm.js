@@ -16,7 +16,7 @@ const CheckOutForm = ({ order }) => {
     const [processing, setProcessing] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://stormy-wave-87937.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price }),
@@ -85,7 +85,7 @@ const CheckOutForm = ({ order }) => {
                 created: paymentIntent.created,
                 last4: paymentMethod.card.last4
             }
-            const url = `http://localhost:5000/allorders/${_id}`;
+            const url = `https://stormy-wave-87937.herokuapp.com/allorders/${_id}`;
             fetch(url, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },

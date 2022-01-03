@@ -13,7 +13,7 @@ const Payment = () => {
     const [order, setOrder] = useState({});
     // console.log(order);
     useEffect( () => {
-        fetch(`http://localhost:5000/confirmOrder/${productId}`)
+        fetch(`https://stormy-wave-87937.herokuapp.com/confirmOrder/${productId}`)
         .then(res => res.json())
         .then(data => setOrder(data));
     }, [productId])
