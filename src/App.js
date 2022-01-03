@@ -8,6 +8,7 @@ import MyOrders from './pages/Home/Home/Dashboard/MyOrders';
 import Payment from './pages/Home/Home/Dashboard/Payment';
 import SendReviews from './pages/Home/Home/Dashboard/SendReviews';
 import Explores from './pages/Home/Home/Explores/Explores';
+import InteriorDesigns from './pages/Home/Home/InteriorDesigns/InteriorDesigns';
 import Login from './pages/Home/Home/Login/Login/Login';
 import Register from './pages/Home/Home/Login/Register/Register';
 import MeetBenefits from './pages/Home/Home/MeetBenefits/MeetBenefits';
@@ -65,6 +66,9 @@ function App() {
            </Route>
           <Route exact path='/addProducts'>
               <AddProducts></AddProducts>
+           </Route>
+          <Route exact path='/interior'>
+              <InteriorDesigns></InteriorDesigns>
            </Route>
           <Route exact path='*'>
               <NotFound></NotFound>

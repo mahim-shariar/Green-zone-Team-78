@@ -39,27 +39,33 @@ const Banner = () => {
       <Grid container spacing={2} sx={{backgroundColor:'#1f1a17'}}>
       <Grid item xs={12} md={2}>
             <img src={offers1} alt="" />
-            <Typography variant='h6'sx={{color:'white'}}>Eco Materials</Typography>
+            <Typography variant='h6' sx={{ color: 'white' }}>Eco Materials</Typography>
+            {/* <Button sx={{backgroundColor:'#e1c265'}}>Available Items</Button> */}
       </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers2} alt="" />
-            <Typography variant='h6'sx={{color:'white'}}>Solar Energy</Typography>
+            <Typography variant='h6' sx={{ color: 'white' }}>Solar Energy</Typography>
+            {/* <Button sx={{backgroundColor:'#e1c265'}}>Available Items</Button> */}
       </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers3} alt="" />
-            <Typography variant='h6'sx={{color:'white'}}>Furniture</Typography>
+            <Typography variant='h6' sx={{ color: 'white' }}>Furniture</Typography>
+            {/* <Button sx={{backgroundColor:'#e1c265'}}>Available Items</Button> */}
       </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers4} alt="" />
-            <Typography variant='h6'sx={{color:'white'}}>Water Supply</Typography>
+            <Typography variant='h6' sx={{ color: 'white' }}>Water Supply</Typography>
+            {/* <Button sx={{backgroundColor:'#e1c265'}}>Available Items</Button> */}
       </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers5} alt="" />
-            <Typography variant='h6'sx={{color:'white'}}>CCTV Reply</Typography>
+            <Typography variant='h6' sx={{ color: 'white' }}>CCTV Reply</Typography>
+            {/* <Button sx={{backgroundColor:'#e1c265'}}>Available Items</Button> */}
       </Grid>
       <Grid item xs={12} md={2}>
             <img src={offers6} alt="" />
-            <Typography variant='h6'sx={{color:'white'}}>Interior Design</Typography>
+            <Typography variant='h6' sx={{ color: 'white' }}>Interior Design</Typography>
+            {/* <Link to='/interior'><Button sx={{backgroundColor:'#e1c265'}}>Available Items</Button></Link> */}
        </Grid>
        </Grid> </>
     );

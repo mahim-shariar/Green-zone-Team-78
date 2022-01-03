@@ -3,6 +3,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import React from 'react';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import PaymentIcon from '@mui/icons-material/Payment';
 
 const MyAllOrders = (props) => {
   const { name, discountPrice, date, image,_id,payment } = props.order;
@@ -46,9 +47,9 @@ const MyAllOrders = (props) => {
         <Button onClick={()=>handleDelete(_id)} variant="outlined" startIcon={<DeleteIcon />}>
         Delete
       </Button>
-        <Button variant="outlined">
+        <Button style={{textDecoration:'none'}} variant="outlined"> 
              {payment ? 'Paid' :
-        <Link to={`/dashboard/payment/${_id}`}> <Button variant='="outlined'>Pay</Button> </Link>}
+        <Link to={`/dashboard/payment/${_id}`} sx={{textDecoration:'none'}}>{<PaymentIcon />}Payment</Link>}
       </Button>
          </CardActions>
         </Card>

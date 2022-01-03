@@ -15,7 +15,6 @@ import { Avatar, Button } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import ReviewsIcon from '@mui/icons-material/Reviews';
-import PaymentIcon from '@mui/icons-material/Payment';
 import LogoutIcon from '@mui/icons-material/Logout';
 import useAuth from '../../../hooks/useAuth';
 import {
@@ -105,12 +104,6 @@ function Dashboard(props) {
       <List>
         <Link to='/addReviews' style={style}>
            <Button><ReviewsIcon />Review</Button>
-        </Link>       
-           </List>
-           
-      <List>
-        <Link to='/payment' style={style}>
-           <Button><PaymentIcon />Payment</Button>
         </Link>       
            </List>
            
