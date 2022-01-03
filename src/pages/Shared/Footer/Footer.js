@@ -6,7 +6,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="l-footer mx-auto ">
         <div className='mx-auto d-flex  ' >
-          <img className='img-fluid' src='https://i.ibb.co/tchrvZM/depositphotos-63913959-stock-illustration-wave-in-house-logo-removebg-preview.png' alt="" />
+          <h4>
+            <img className='img-fluid' src='https://i.ibb.co/XSMK67z/7889330123150814d3e25a9dfd47b9f7-removebg-preview-1.png' alt="" />
+            <span style={{ color: '#0d620d' }} >Green</span> <span style={{ color: 'rgb(72 55 42)' }} > Zone </span>
+          </h4>
         </div>
         <div>
           <p className='text-center' >

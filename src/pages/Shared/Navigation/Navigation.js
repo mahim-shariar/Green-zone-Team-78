@@ -92,12 +92,16 @@ const Navigation = () => {
           >
             <MenuIcon sx={{ color: 'black' }} />
           </IconButton>
-          <div style={{ backgroundColor: '#e1c265', padding: '12px' }}>
-            <img
-              src="https://i.ibb.co/B3nYkvY/logo-small.png"
-              alt=""
-              className={navLogo}
-            />
+          <div style={{ padding: '12px' }}>
+            <h5>
+              <img
+                // className='img-fluid'
+                src="https://i.ibb.co/bRh1L8w/rsz-7889330123150814d3e25a9dfd47b9f7-removebg-preview.png"
+                alt=""
+                className='navLogo img-fluid '
+              />
+              <span style={{color:'#0d620d'}} >Green</span> <span style={{color:'#6e5543'}} >  Zone </span>
+            </h5>
           </div>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           </Typography>

@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Review from '../Review/Review';
-import productsBg from '../../../../image/products-bg-2.jpg';
+// import productsBg from '../../../../image/products-bg-2.jpg';
 
 
 // const style = {

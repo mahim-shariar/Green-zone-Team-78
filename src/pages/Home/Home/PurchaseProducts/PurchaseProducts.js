@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent,Container, CardMedia, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useForm } from "react-hook-form";
@@ -19,7 +19,6 @@ const PurchaseProducts = () => {
       .then(res => res.json())
       .then(data => setPurchase(data[0]))
   }, [productId])
-
   const { register, handleSubmit } = useForm();
   const onSubmit = data => {
     fetch("https://stormy-wave-87937.herokuapp.com/confirmOrder", {
@@ -48,7 +47,7 @@ const PurchaseProducts = () => {
     <Navigation></Navigation>
       <Container sx={{ flexGrow: 1, mt: 5,marginY:10}}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
@@ -76,19 +75,19 @@ const PurchaseProducts = () => {
               <input
                 {...register("name")}
                 defaultValue={purchase?.name}
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
               />
 
               <input
                 {...register("Name")}
                 placeholder="Your Name"
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
                 defaultValue={user?.displayName}
               />
               <input
                 {...register("Email")}
                 placeholder="Email"
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
                 type="email"
                 defaultValue={user?.email}
               />
@@ -96,22 +95,22 @@ const PurchaseProducts = () => {
               <input
                 {...register("Address")}
                 placeholder="Address"
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
               />
               <input
                 {...register("date")}
                 type="date"
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
               />
               <input
                 {...register("number", { required: true })}
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
                 type="number"
                 placeholder='Phone Number'
               />
               <input
                 {...register("price", { required: true })}
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
                 type="number"
                 defaultValue={purchase?.discountPrice}
                 placeholder='Discount Price'
@@ -119,11 +118,11 @@ const PurchaseProducts = () => {
               <input
                 {...register("image", { required: true })}
                 defaultValue={purchase?.image}
-                style={{ width: '150%', padding: '15px', margin: '5px', borderRadius: '5px' }}
+                style={{ width: '150%', padding: '12px', margin: '5px', borderRadius: '5px',border:"1px solid #4c4949" }}
                 placeholder="Image"
               />
               <input className='btn back-color '
-                style={{ width: '165%', padding: '5px', margin: '5px', borderRadius: '5px', fontSize: '20px', backgroundColor: '#574437', color: 'white' }}
+                style={{ width: '150%', padding: '5px', margin: '5px', borderRadius: '5px', fontSize: '20px', backgroundColor: '#574437', color: 'white' }}
                 type="submit"
                 value="Order Here"
               />

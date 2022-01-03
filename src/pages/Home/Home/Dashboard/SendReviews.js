@@ -8,8 +8,9 @@ import useAuth from '../../../hooks/useAuth';
 const style = {
     margin: '10px',
     padding: '10px',
-    borderRadius: '10px',
-    marginTop:'2%'
+    borderRadius: '5px',
+    marginTop:'2%',
+    border:"1px solid #4c4949" 
 }
 // const style2 = {
 //     background: `url(${})`,
@@ -70,7 +71,8 @@ const SendReviews = () => {
                     defaultValue={user.photoURL}
                 />
                 <input type="submit"
-                    style={style} />
+                className='btn back-color'
+                    style={{ padding: '5px', margin: '5px', borderRadius: '5px', fontSize: '20px', backgroundColor: '#574437', color: 'white' }} />
             </form>
      </div>
     );
