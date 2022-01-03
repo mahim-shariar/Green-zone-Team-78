@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import {CardElement, useStripe, useElements} from '@stripe/react-stripe-js';
+import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 
 import { CircularProgress } from '@mui/material';
 import useAuth from '../../../hooks/useAuth';
 
 const CheckOutForm = ({ order }) => {
-    const {price, name, _id} = order;
+    const { price, name, _id } = order;
     const stripe = useStripe();
     const elements = useElements();
-    const{user} = useAuth();
+    const { user } = useAuth();
 
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
@@ -21,8 +21,8 @@ const CheckOutForm = ({ order }) => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ price }),
         })
-        .then((res) => res.json())
-        .then((data) => setClientSecret(data.clientSecret));
+            .then((res) => res.json())
+            .then((data) => setClientSecret(data.clientSecret));
     }, [price])
 
     const handleSubmit = async (e) => {
@@ -40,7 +40,7 @@ const CheckOutForm = ({ order }) => {
 
         setProcessing(true);
 
-        const {error, paymentMethod} = await stripe.createPaymentMethod({
+        const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card,
         });
@@ -54,25 +54,25 @@ const CheckOutForm = ({ order }) => {
         }
 
         // Payment Intent
-        const {paymentIntent, error: IntentError} = await stripe.confirmCardPayment(
+        const { paymentIntent, error: IntentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
-              payment_method: {
-                card: card,
-                billing_details: {
-                  name: name,
-                  email: user.email
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: name,
+                        email: user.email
+                    },
                 },
-              },
             },
-          );
+        );
 
-          if(IntentError){
-              setError(IntentError.message);
-              setSuccess('');
-              setProcessing(false);
-          }
-          else{
+        if (IntentError) {
+            setError(IntentError.message);
+            setSuccess('');
+            setProcessing(false);
+        }
+        else {
             setError('');
             setSuccess('Your payment processed successfully');
             console.log(paymentIntent);
@@ -91,40 +91,41 @@ const CheckOutForm = ({ order }) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payment)
             })
-            .then((res) => res.json())
-            .then((data) => console.log(data));
-          }
+                .then((res) => res.json())
+                .then((data) => console.log(data));
+
+        }
     }
     return (
         <div className='row m-0'>
             <div className="col-lg-7 m-auto border border-warning py-5 bg-black">
-            <form onSubmit={handleSubmit}>
-                <CardElement
-                    options={{
-                    style: {
-                        base: {
-                        fontSize: '20px',
-                        color: 'gold',
-                        '::placeholder': {
-                            color: 'white',
-                        },
-                        },
-                        invalid: {
-                            color: '#9e2146',
-                        },
-                    },
-                    }}
-                />
-                {processing ? <CircularProgress></CircularProgress> :<button type="submit" className="btn btn-primary" disabled={!stripe || success}>
-                    Pay ${price}
-                </button>}
-            </form>
-            {
-                error && <p style={{color : 'red'}}>{error}</p>
-            }
-            {
-                success && <p style={{color : 'green'}}>{success}</p>
-            }
+                <form onSubmit={handleSubmit}>
+                    <CardElement
+                        options={{
+                            style: {
+                                base: {
+                                    fontSize: '20px',
+                                    color: 'gold',
+                                    '::placeholder': {
+                                        color: 'white',
+                                    },
+                                },
+                                invalid: {
+                                    color: '#9e2146',
+                                },
+                            },
+                        }}
+                    />
+                    {processing ? <CircularProgress></CircularProgress> : <button type="submit" className="btn btn-primary" disabled={!stripe || success}>
+                        Pay ${price}
+                    </button>}
+                </form>
+                {
+                    error && <p style={{ color: 'red' }}>{error}</p>
+                }
+                {
+                    success && <p style={{ color: 'green' }}>{success}</p>
+                }
             </div>
         </div>
     );

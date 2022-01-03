@@ -39,80 +39,79 @@ import Payment from './Payment';
 
 
 const style = {
-  textDecoration: 'none', 
-  color:'#0561c1'
+  textDecoration: 'none',
+  color: '#0561c1'
 }
 
 const drawerWidth = 240;
 
 function Dashboard(props) {
-  const { logout,admin,user} = useAuth();
+  const { logout, admin, user } = useAuth();
 
-     const { window } = props;
-     const [mobileOpen, setMobileOpen] = React.useState(false);
-     
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
   let { path, url } = useRouteMatch();
-     const handleDrawerToggle = () => {
-     setMobileOpen(!mobileOpen);
-     };
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
 
-   const drawer = (
-     <div>
-       <Typography variant='h6' sx={{color:'#0d3562',backgroundColor:'#d5d9dc',p:2}}><AccountCircleIcon/> Profile</Typography>
-       <Toolbar />     
-       <Avatar alt="Cindy Baker" src={user.photoURL} style={{ margin: 'auto', marginBottom: '10px' }} />
-       <Typography variant='h6' sx={{color:'#0d3562'}}>{user.displayName}</Typography> <br />
+  const drawer = (
+    <div>
+      <Typography variant='h6' sx={{ color: '#0d3562', backgroundColor: '#d5d9dc', p: 2 }}><AccountCircleIcon /> Profile</Typography>
+      <Toolbar />
+      <Avatar alt="Cindy Baker" src={user.photoURL} style={{ margin: 'auto', marginBottom: '10px' }} />
+      <Typography variant='h6' sx={{ color: '#0d3562' }}>{user.displayName}</Typography> <br />
       <Divider />
 
-       {/* Admin Route */}
-       {admin ? <Box>
-         <Link to='/home' style={style}>
-         <Button color='inherit'><HomeIcon/>Home</Button>
-         </Link><br />
-         
+      {/* Admin Route */}
+      {admin ? <Box>
+        <Link to='/home' style={style}>
+          <Button color='inherit'><HomeIcon />Home</Button>
+        </Link><br />
+
         <Link to={`${url}/manageAllOrder`} style={style}>
-         <Button color='inherit'><BadgeIcon/> Manage All Order</Button>
-       </Link>
-
-       <Link to={`${url}/addProducts`} style={style}>
-         <Button color='inherit'> <ProductionQuantityLimitsIcon/> Add A Product</Button>
-       </Link>
-
-       <Link to={`${url}/manageProducts`} style={style}>
-         <Button color='inherit'><ManageAccountsIcon/> Manage Products</Button>
-       </Link>
-
-       <Link to={`${url}/makeAdmin`} style={style}>
-         <Button color='inherit'><AdminPanelSettingsIcon/> Make Admin</Button>
-       </Link> <br />
-
-       <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'><LogoutIcon/> Log Out</Button></Link>
-       </Box> :
-         <Box>
-
-             <List>
-        <Link to='/home' style={style}>
-           <Button><HomeIcon />Home</Button>
-        </Link>        
-           </List>
-           
-      <List>
-        <Link to='/myOrder' style={style}>
-           <Button><ShoppingBagIcon />My Orders</Button>
-        </Link>       
-           </List>
-           
-      <List>
-        <Link to='/addReviews' style={style}>
-           <Button><ReviewsIcon />Review</Button>
-        </Link>       
-           </List>
-           
-        <Link to='/home' style={style}>
-           <Button onClick={logout}><LogoutIcon />Log Out</Button>
+          <Button color='inherit'><BadgeIcon /> Manage All Order</Button>
         </Link>
-           
-         </Box>}
+
+        <Link to={`${url}/addProducts`} style={style}>
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add A Product</Button>
+        </Link>
+
+        <Link to={`${url}/manageProducts`} style={style}>
+          <Button color='inherit'><ManageAccountsIcon /> Manage Products</Button>
+        </Link>
+
+        <Link to={`${url}/makeAdmin`} style={style}>
+          <Button color='inherit'><AdminPanelSettingsIcon /> Make Admin</Button>
+        </Link> <br />
+
+        <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'><LogoutIcon /> Log Out</Button></Link>
+      </Box> :
+        <Box>
+
+          <List>
+            <Link to='/home' style={style}>
+              <Button><HomeIcon />Home</Button>
+            </Link>
+          </List>
+
+          <List>
+            <Link to='/myOrder' style={style}>
+              <Button><ShoppingBagIcon />My Orders</Button>
+            </Link>
+          </List>
+
+          <List>
+            <Link to='/addReviews' style={style}>
+              <Button><ReviewsIcon />Review</Button>
+            </Link>
+          </List>
+          <Link to='/home' style={style}>
+            <Button onClick={logout}><LogoutIcon />Log Out</Button>
+          </Link>
+
+        </Box>}
     </div>
   );
 
@@ -122,7 +121,7 @@ function Dashboard(props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar
-        style={{backgroundColor:'#d5d9dc',color:'#0d3562'}}
+        style={{ backgroundColor: '#d5d9dc', color: '#0d3562' }}
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -183,27 +182,27 @@ function Dashboard(props) {
         <Toolbar />
 
         {/* nested route */}
-        
+
         <Switch>
-        <Route exact path={path}>
-          <Reviews></Reviews>
-        </Route>
+          <Route exact path={path}>
+            <Reviews></Reviews>
+          </Route>
           <AdminRoute path={`${path}/manageAllOrder`}>
             <ManageAllOrder></ManageAllOrder>
-        </AdminRoute>
+          </AdminRoute>
           <AdminRoute path={`${path}/addProducts`}>
             <AddProducts></AddProducts>
-        </AdminRoute>
+          </AdminRoute>
           <AdminRoute path={`${path}/manageProducts`}>
             <ManageProducts></ManageProducts>
-        </AdminRoute>
+          </AdminRoute>
           <AdminRoute path={`${path}/makeAdmin`}>
             <MakeAdmin></MakeAdmin>
           </AdminRoute>
           <Route path={`${path}/payment/:productId`}>
-              <Payment></Payment>
-           </Route>
-      </Switch>
+            <Payment></Payment>
+          </Route>
+        </Switch>
       </Box>
     </Box>
   );

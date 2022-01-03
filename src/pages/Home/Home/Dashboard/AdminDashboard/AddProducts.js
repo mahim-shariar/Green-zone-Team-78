@@ -2,23 +2,24 @@ import { Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2';
-import productsBg from '../../../../../image/addProducts-bg.jpg';
+// import productsBg from '../../../../../image/addProducts-bg.jpg';
 
 
 const style = {
     margin: '10px',
     padding: '10px',
-    borderRadius: '10px',
-    marginTop:'2%'
+    borderRadius: '5px',
+    marginTop: '2%',
+    border: "1px solid #4c4949"
 }
-const style2 = {
-    background: `url(${productsBg})`,
-    backgroundSize: 'cover',
-    height:'100vh'
-}
+// const style2 = {
+//     background: `url(${productsBg})`,
+//     backgroundSize: 'cover',
+//     height:'100vh'
+// }
 
 const AddProducts = () => {
-   const { register, handleSubmit,reset} = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         fetch('https://stormy-wave-87937.herokuapp.com/addProducts', {
             method: 'POST',
@@ -31,23 +32,23 @@ const AddProducts = () => {
                 if (data.insertedId) {
                     Swal.fire(
                         'Successfully Added Product',
-                      )
+                    )
                     reset()
                 }
             })
-   };
-   
+    };
+
     return (
-        <div style={style2}>
-            <Typography variant='h3' sx={{fontWeight:'900'}}>
+        <div>
+            <Typography variant='h3' sx={{ fontWeight: '900' }}>
                 Add A New Product Or Change Products..!!
             </Typography>
-      <form onSubmit={handleSubmit(onSubmit)} style={{display:"flex",flexDirection:'column',width:'40%',margin:'auto'}}>
+            <form onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", flexDirection: 'column', width: '40%', margin: 'auto' }}>
                 <input {...register("name")}
                     style={style}
                     placeholder='Products Name'
                 />
-                
+
                 <textarea {...register("description")}
                     style={style}
                     placeholder='Products Description'
@@ -65,9 +66,10 @@ const AddProducts = () => {
                     placeholder='Products Image'
                 />
                 <input type="submit"
-                    style={style} />
+                className='btn back-color'
+                    style={{ padding: '5px', margin: '5px', borderRadius: '5px', fontSize: '20px', backgroundColor: '#574437', color: 'white' }}/>
             </form>
-     </div>
+        </div>
     );
 };
 

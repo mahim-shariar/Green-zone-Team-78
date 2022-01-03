@@ -23,7 +23,7 @@ const WorkStage = () => {
                     <Typography variant='h6'
                         sx={{ color: '#544438' }}>We select the most high-quality wood materials, which have a very long life in any climatic conditions..
                     </Typography>
-                    <Button className='btn-style' variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }} >Order Now</Button>
+                    <Button className='btn-style' variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 3 }} >Order Now</Button>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <img
