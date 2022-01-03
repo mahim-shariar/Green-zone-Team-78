@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import { Avatar,useTheme } from '@mui/material';
+import { Avatar, useTheme } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -18,125 +18,131 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import './Nav.css'
 
 const style = {
-    textDecoration:'none',
-    marginRight: '10px',
-    fontSize: '17px',
-    color:'black'   
+  textDecoration: 'none',
+  marginRight: '10px',
+  fontSize: '17px',
+  color: 'black'
 }
 
 const Navigation = () => {
   const { user, logout } = useAuth();
 
-  const theme=useTheme()
+  const theme = useTheme()
   const useStyle = makeStyles({
     navIcon: {
       [theme.breakpoints.up('sm')]: {
-        display:'none'
+        display: 'none'
       }
     },
     navIconContainer: {
       [theme.breakpoints.down('sm')]: {
-        display:'none'
+        display: 'none'
       }
     },
     navLogo: {
       [theme.breakpoints.down('sm')]: {
-        textAlign:'center'
+        textAlign: 'center'
       }
     }
   })
-  const { navIcon,navIconContainer,navLogo } = useStyle();
-  
-  const [state, setState] = React.useState(false);
-    <Box
-    sx={{ width:250 }}
-    role="presentation"
-   >
-  <List>
-    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-      <ListItem button key={text}>
-        <ListItemIcon>
-          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-        </ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItem>
-    ))}
-  </List>
-  <Divider />
-  <List>
-    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-      <ListItem button key={text}>
-        <ListItemIcon>
-          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-        </ListItemIcon>
-        <ListItemText primary={text} />
-      </ListItem>
-    ))}
-  </List>
-</Box>
+  const { navIcon, navIconContainer, navLogo } = useStyle();
 
-    return (
-       <> <Box sx={{ flexGrow: 1}}>
-        <AppBar position="fixed" sx={{backgroundColor:'white' }}>
-          <Toolbar>
-            <IconButton         
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-              className={navIcon}
-            >
-            <MenuIcon sx={{ color: 'black' }}/>
-              </IconButton>
-             <div style={{backgroundColor:'#e1c265',padding:'12px'}}>
-            <img
-             src="https://i.ibb.co/B3nYkvY/logo-small.png"
-             alt=""
-             className={navLogo}
+  const [state, setState] = React.useState(false);
+  <Box
+    sx={{ width: 250 }}
+    role="presentation"
+  >
+    <List>
+      {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        <ListItem button key={text}>
+          <ListItemIcon>
+            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          </ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItem>
+      ))}
+    </List>
+    <Divider />
+    <List>
+      {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        <ListItem button key={text}>
+          <ListItemIcon>
+            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+          </ListItemIcon>
+          <ListItemText primary={text} />
+        </ListItem>
+      ))}
+    </List>
+  </Box>
+
+  return (
+    <> <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="fixed" sx={{ backgroundColor: 'white' }}>
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+            className={navIcon}
+          >
+            <MenuIcon sx={{ color: 'black' }} />
+          </IconButton>
+          <div style={{ padding: '12px' }}>
+            <h5>
+              <img
+                // className='img-fluid'
+                src="https://i.ibb.co/bRh1L8w/rsz-7889330123150814d3e25a9dfd47b9f7-removebg-preview.png"
+                alt=""
+                className='navLogo img-fluid '
               />
-            </div>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            </Typography>
-            <Box className={navIconContainer}>
+              <span style={{color:'#0d620d'}} >Green</span> <span style={{color:'#6e5543'}} >  Zone </span>
+            </h5>
+          </div>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          </Typography>
+          <Box className={navIconContainer}>
             <Link to='/home' style={style}><Button color="inherit">Home</Button></Link>
-            <Link to='/meetBenefit' style={style}><Button color="inherit">About</Button></Link> 
-              <Link to='/explores' style={style}><Button color="inherit">Explore</Button></Link>                  
-              <Link to='/reviews' style={style}><Button color="inherit">Reviews</Button></Link>      
+            <Link to='/explores' style={style}><Button color="inherit">Explore</Button></Link>
+            <Link to='/reviews' style={style}><Button color="inherit">Reviews</Button></Link>
+            <Link to='/meetBenefit' style={style}><Button color="inherit">About</Button></Link>
+            <Link to='/services' style={style}><Button color="inherit">Our Services</Button></Link>
             {
-              user.email &&<Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>  
-              }    
-            {
-              user.email?<Button onClick={logout} style={{backgroundColor: '#e1c265',fontSize:'15px'}}>Log Out</Button>:
-              <Link to='/login' style={style}>
-            <Button style={{backgroundColor: '#e1c265',fontSize:'15px'}}>Login</Button>
-            </Link>
+              user.email && <Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>
             }
-              </Box>
             {
-              user.email && <Avatar
+              user.email ? <Button onClick={logout} style={{ backgroundColor: '#e1c265', fontSize: '15px', color: 'white' }}>Log Out</Button> :
+                <Link to='/login' style={style}>
+                  <Button style={{ backgroundColor: '#e1c265', fontSize: '15px', color: 'white' }}>Login</Button>
+                </Link>
+            }
+          </Box>
+          {
+            user.email && <Avatar
               alt="Remy Sharp"
               src={user?.photoURL}
-              sx={{ width: 45, height: 45,m:1 }}
+              sx={{ width: 45, height: 45, m: 1 }}
             />
-            }
-          </Toolbar>
-        </AppBar>
-      </Box>
-        <div>
-     
-          <React.Fragment>
-            <Button onClick={()=>setState(true)}>Click</Button>
-            <Drawer
-              open={state}
-              onClose={()=>setState(false)}
-            >
-            </Drawer>
-          </React.Fragment>
-      
+          }
+        </Toolbar>
+      </AppBar>
+    </Box>
+      <div>
+
+        <React.Fragment>
+          <Button onClick={() => setState(true)}>Click</Button>
+          <Drawer
+            open={state}
+            onClose={() => setState(false)}
+          >
+          </Drawer>
+        </React.Fragment>
+
       </div> </>
-    );
+  );
 };
 export default Navigation;

@@ -9,6 +9,7 @@ import offers4 from '../../../../image/icon-img/service-icon-4.png';
 import offers5 from '../../../../image/icon-img/service-icon-5.png';
 import offers6 from '../../../../image/icon-img/service-icon-6.png';
 import { Link } from 'react-router-dom';
+import './Banner.css'
 
 const style = {
       backgroundImage: `url(${bg})`,
@@ -27,7 +28,7 @@ const Banner = () => {
              We are always ready to deliver quality
              wooden house to you.
          </Typography>
-        <Link to='/explores' style={{textDecoration:'none'}}> <Button sx={{color:'white',mt:3,backgroundColor:'#e1c265'}} variant="outlined" size="large">
+        <Link to='/explores' style={{textDecoration:'none'}}> <Button className='btn-style' sx={{color:'white',mt:3,backgroundColor:'#edc650',border:'1px solid #edc650'}} variant="outlined" size="large">
           Explore More
         </Button>
         </Link>

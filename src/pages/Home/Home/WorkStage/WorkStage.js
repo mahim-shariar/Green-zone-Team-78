@@ -5,7 +5,7 @@ import stageman from '../../../../image/stages-man.png';
 
 const WorkStage = () => {
     return (
-        <Container sx={{mt:8,p:5}}>
+        <Container sx={{ mt: 8, p: 5 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={4}
                     sx={{
@@ -23,22 +23,21 @@ const WorkStage = () => {
                     <Typography variant='h6'
                         sx={{ color: '#544438' }}>We select the most high-quality wood materials, which have a very long life in any climatic conditions..
                     </Typography>
-                    <Button>Order Now</Button>
+                    <Button className='btn-style' variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }} >Order Now</Button>
                 </Grid>
-            <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={4}>
                     <img
-                        height='100%'
-                        width='auto'
+                        className='img-fluid'
                         src={imgHouse}
                         alt="" />
-           </Grid>
-           <Grid item xs={12} md={4}>
+                </Grid>
+                <Grid item xs={12} md={4}>
                     <img
                         width='90%'
-                        style={{marginTop:'18%',marginLeft:'60px'}}
+                        style={{ marginTop: '18%', marginLeft: '60px' }}
                         src={stageman}
                         alt="" />
-           </Grid>
+                </Grid>
             </Grid>
         </Container>
     );

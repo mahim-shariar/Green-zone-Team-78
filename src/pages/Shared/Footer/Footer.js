@@ -1,97 +1,60 @@
-import { Button, Grid, List, ListItemText, Typography } from '@mui/material';
 import React from 'react';
-import footerLogo from '../../../image/tree-ring_JAVSJPT33J.jpg';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import AddIcCallTwoToneIcon from '@mui/icons-material/AddIcCallTwoTone';
-import AttachEmailTwoToneIcon from '@mui/icons-material/AttachEmailTwoTone';
-import FacebookTwoToneIcon from '@mui/icons-material/FacebookTwoTone';
-import { Box } from '@mui/system';
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
-import SendIcon from '@mui/icons-material/Send';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import InstagramIcon from '@mui/icons-material/Instagram';
-
-
-const style = {
-    background: `url(${footerLogo}),linear-gradient(#1d1815,#1d1815)`,
-    backgroundBlendMode: 'overlay',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize:'cover'
-}
-
+import './Footer.css'
+// import logo from '../../images/logo.png'
 const Footer = () => {
-    return (
-     <>  <Grid container spacing={2} sx={style} style={{padding:'5%'}}>
-            <Grid item xs={12} md={3}>
-            <img
-            style={{ backgroundColor: '#e1c265',padding:'10px'}}
-            src="https://i.ibb.co/B3nYkvY/logo-small.png"
-            alt="" />
-                <Typography variant='body1' sx={{ color: '#e1c265' }}>We have over 10 years of experience, We take pride in delivering Intelligent Designs for clients all over the World.</Typography>
-         <Button style={{color:'#e1c265'}}>Subscribe Us</Button>        
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <Typography variant='h4' sx={{color:'#e1c265',fontWeight:'800'}}>
-               Services         
-                </Typography> <hr/>
-                <List sx={{color:'#e1c265'}}>
-                    <ListItemText>All Services</ListItemText>
-                    <ListItemText>General Carpentry</ListItemText>
-                    <ListItemText>Manufacturer Furniture</ListItemText>
-                    <ListItemText>Hang Paintings</ListItemText>
-                    <ListItemText>Commercial Work</ListItemText>
-                    <ListItemText>Furniture Design</ListItemText>
-                </List>
-        </Grid>
-        <Grid item xs={12} md={3}>
-        <Typography variant='h4' sx={{color:'#e1c265',fontWeight:'800'}}>
-               Contact Us         
-                </Typography> <hr />
-                <List sx={{color:'#e1c265'}}>
-                    <ListItemText> <LocationOnIcon /> Dhanmondi 32,Dhaka City,Bangladesh</ListItemText>
-                    <ListItemText> <AddIcCallTwoToneIcon /> +8801700000000; +01209090</ListItemText>
-                    <ListItemText><AttachEmailTwoToneIcon/> barhouse@barhouse.us</ListItemText>
-                    <ListItemText><FacebookTwoToneIcon/> barhouse</ListItemText>
-                </List>
-        </Grid>
-        <Grid item xs={12} md={3}>
-        <Typography variant='h4' sx={{color:'#e1c265',fontWeight:'800'}}>
-               Newsletter        
-                </Typography> <hr />
-        <Typography variant='body1'sx={{color:'#e1c265'}}>
-        Stay up to date. Follow our latest news, Carpentry tips and special offers.        
-                </Typography>
-                <Box sx={{ '& > :not(style)': { m: 1,backgroundColor:'#e1c265' } }}>
-      <FormControl variant="standard">
-        <InputLabel htmlFor="input-with-icon-adornment">
-          Your Email
-        </InputLabel>
-        <Input
-          id="input-with-icon-adornment"
-          startAdornment={
-            <InputAdornment position="right">
-              <SendIcon />
-            </InputAdornment>
-            }
-           />
-          </FormControl>    
-                </Box>
-                <FacebookIcon sx={{fontSize:'40px',color:'#4064ac'}}/>
-                <TwitterIcon sx={{ fontSize: '40px', color: '#1c9cea' }}/>
-                <LinkedInIcon sx={{ fontSize: '40px', color: '#0074af' }}/>
-                <WhatsAppIcon sx={{ fontSize: '40px', color: '#41d251' }}/>
-                <InstagramIcon sx={{ fontSize: '40px', color: '#e46737' }}/>
-            </Grid>
-        </Grid>
-        <Box>
-        <Typography sx={{backgroundColor:'#1d1815',color:'white',padding:'10px'}}>&copy;2021--All Rights are Reserved By &trade; Bar-House || Created &hearts; By Musfiqur Rahman</Typography>
-        </Box> </>
-    );
+  return (
+    <footer className="footer">
+      <div className="l-footer mx-auto ">
+        <div className='mx-auto d-flex  ' >
+          <h4>
+            <img className='img-fluid' src='https://i.ibb.co/XSMK67z/7889330123150814d3e25a9dfd47b9f7-removebg-preview-1.png' alt="" />
+            <span style={{ color: '#0d620d' }} >Green</span> <span style={{ color: 'rgb(72 55 42)' }} > Zone </span>
+          </h4>
+        </div>
+        <div>
+          <p className='text-center' >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam atque recusandae in sit sunt molestiae aliquid fugit. Mollitia eaque tempore iure sit nobis? Vitae nemo, optio maiores numquam quis recusandae.</p>
+        </div>
+      </div>
+      <ul className="r-footer">
+        <li>
+          <h2 className='fw-bold' >
+            Social</h2>
+          <ul className="box">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Pinterest</a></li>
+            <li><a href="#">Dribbble</a></li>
+          </ul>
+        </li>
+        <li className="features">
+          <h2 className='fw-bold' >
+            Information</h2>
+          <ul className="box h-box">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">Customer Service</a></li>
+          </ul>
+        </li>
+        <li>
+          <h2 className='fw-bold'>
+            Legal</h2>
+          <ul className="box">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Contract</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div className="b-footer">
+        <p>
+          All rights reserved by ©Move-n-Settle {new Date().getFullYear()}
+        </p>
+      </div>
+    </footer>
+
+  );
 };
 export default Footer;

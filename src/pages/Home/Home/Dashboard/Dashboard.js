@@ -37,6 +37,7 @@ import Payment from './Payment';
 
 
 
+
 const style = {
   textDecoration: 'none', 
   color:'#0561c1'
