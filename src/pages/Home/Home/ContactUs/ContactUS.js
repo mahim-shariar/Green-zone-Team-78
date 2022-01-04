@@ -3,8 +3,8 @@ import emailjs from '@emailjs/browser';
 import './ContactUs.css'
 import { Container } from 'react-bootstrap';
 import { Grid } from '@mui/material';
-import Navigation from './../../../Shared/Navigation/Navigation';
-import Footer from './../../../Shared/Footer/Footer';
+// import Navigation from './../../../Shared/Navigation/Navigation';
+// import Footer from './../../../Shared/Footer/Footer';
 
 export const ContactUs = () => {
     const form = useRef();
@@ -24,7 +24,6 @@ export const ContactUs = () => {
     return (
         <>
             <Container id="contact" data-aos="zoom-out-down" className='py-5'>
-                <Navigation></Navigation>
                 <Grid container spacing={2} sx={{ marginY: 10 }} >
                     <Grid item xs={12} md={6} lg={6} className='my-auto' >
                         <form ref={form} onSubmit={sendEmail} className='mx-auto d-flex flex-column w-100 '>
@@ -45,7 +44,6 @@ export const ContactUs = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <Footer></Footer>
         </>
     );
 };

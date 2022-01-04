@@ -2,10 +2,10 @@ import React from 'react';
 import "./SingleWork.css"
 
 const SingleWork = (props) => {
-    const {image, title} = props.data;
+    const {icon, title} = props.data;
     return (
         <div className="work-col">
-            <img src={image} alt=""/>
+            <h1 > {icon} </h1>
             <h4>{title}</h4>
         </div>
     );

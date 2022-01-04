@@ -7,7 +7,7 @@ import Contact from './Home/Contact/Contact';
 import Products from './Home/Products/Products';
 import Reviews from './Home/Reviews/Reviews';
 import WorkStage from './Home/WorkStage/WorkStage';
-
+import { ContactUs } from './Home/ContactUs/ContactUS';
 const Home = () => {
     return (
         <div>
@@ -18,6 +18,7 @@ const Home = () => {
             <WorkStage></WorkStage>
             <Chart></Chart>
             <Reviews></Reviews>
+            <ContactUs></ContactUs>
             <Footer></Footer>
         </div>
     );

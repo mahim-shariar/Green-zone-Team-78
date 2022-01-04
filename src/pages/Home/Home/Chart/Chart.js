@@ -14,7 +14,6 @@ import {
     Legend,
     PieChart,
     Pie,
-    Cell,
 } from 'recharts';
 
 const data01 = [
@@ -38,39 +37,39 @@ const data01 = [
 const data = [
     {
         name: 'Eco Materials',
-        uv: 590,
-        pv: 800,
-        amt: 1400,
+        Lose: 590,
+        Profite: 800,
+        Invesment: 1400,
     },
     {
         name: 'Solar Energy',
-        uv: 868,
-        pv: 967,
-        amt: 1506,
+        Lose: 868,
+        Profite: 967,
+        Invesment: 1506,
     },
     {
         name: 'Furniture',
-        uv: 1397,
-        pv: 1098,
-        amt: 989,
+        Lose: 1397,
+        Profite: 1098,
+        Invesment: 989,
     },
     {
         name: 'Water Supply',
-        uv: 1480,
-        pv: 1200,
-        amt: 1228,
+        Lose: 1480,
+        Profite: 1200,
+        Invesment: 1228,
     },
     {
         name: 'CCTV Replay',
-        uv: 1520,
-        pv: 1108,
-        amt: 1100,
+        Lose: 1520,
+        Profite: 1108,
+        Invesment: 1100,
     },
     {
         name: 'Interior Design',
-        uv: 1400,
-        pv: 680,
-        amt: 1700,
+        Lose: 1400,
+        Profite: 680,
+        Invesment: 1700,
     },
 ];
 
@@ -83,7 +82,7 @@ const Chart = () => {
             <Grid container spacing={2} sx={{ my: 3 }} >
                 <Grid item md={8} xs={12} >
                     <h3 style={{ color: '#574437' }} > Our investment </h3>
-                    <div className='mx-auto' style={{ width: '100%', height: 300 }}>
+                    <div className='mx-auto' style={{ width: '100%', height: 450 }}>
                         <ResponsiveContainer>
                             <ComposedChart
                                 width={500}
@@ -101,9 +100,9 @@ const Chart = () => {
                                 <YAxis />
                                 <Tooltip />
                                 <Legend />
-                                <Area type="monotone" dataKey="amt" fill="#8884d8" stroke="#8884d8" />
-                                <Bar dataKey="pv" barSize={20} fill="#413ea0" />
-                                <Line type="monotone" dataKey="uv" stroke="#ff7300" />
+                                <Area type="monotone" dataKey="Invesment" fill="#8884d8" stroke="#8884d8" />
+                                <Bar dataKey="Profite" barSize={20} fill="#413ea0" />
+                                <Line type="monotone" dataKey="Lose" stroke="#ff7300" />
                             </ComposedChart>
                         </ResponsiveContainer>
                     </div>

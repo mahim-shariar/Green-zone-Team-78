@@ -1,25 +1,25 @@
 import React from 'react';
 import SingleWork from './SingleWork/SingleWork';
 import './WorkProcess.css'
-import contract from "../../images/contract.png"
-import box from "../../images/open-box.png"
-import truck from "../../images/truck.png"
-import carrying from "../../images/men-carrying-a-box.png"
+import ContactPhone from '@mui/icons-material/ContactPhone';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
+import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 const WorkData = [
     {
-        image: contract,
+        icon:<ContactPhone style={{fontSize:'40px'}} ></ContactPhone>,
         title: "Book Your Service"
     },
     {
-        image: box,
+        icon:<AddShoppingCartIcon style={{fontSize:'40px'}}></AddShoppingCartIcon>,
         title: "Pack Your Good"
     },
     {
-        image: truck,
+        icon:<LocalShippingIcon style={{fontSize:'40px'}}></LocalShippingIcon>,
         title: "Safe Loading"
     },
     {
-        image: carrying,
+        icon:<AirportShuttleIcon style={{fontSize:'40px'}}></AirportShuttleIcon>,
         title: "Safe Delivery"
     }
 
@@ -28,7 +28,7 @@ const WorkData = [
 
 const WorkProcess = () => {
     return (
-        <section className="workProcess">
+        <section className="workProcess my-5 ">
             <h1>Our Work Process</h1>
             <p>Its this founding principle that has helped our organisation as well as our clients become a defining force in the industry.</p>
             <div className="work-row">

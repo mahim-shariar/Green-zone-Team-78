@@ -1,13 +1,17 @@
 import React from 'react';
 import Footer from '../../../Shared/Footer/Footer';
 import Navigation from '../../../Shared/Navigation/Navigation';
+import Team from '../Team/Team';
+// import SingleWork from '../WorksProcess/SingleWork/SingleWork';
+import WorkProcess from '../WorksProcess/WorkProcess';
 import './Services.css'
 
 const Services = () => {
     return (
         <>
             <Navigation></Navigation>
-
+            <WorkProcess></WorkProcess>
+            <Team></Team>
             <h2 className="p-2 bg-dark text-white fw-bold" style={{ marginTop: "100px" }} >Our More Service</h2>
             <div className="container my-5 " style={{ marginTop: "100px", marginBottom: '100px' }} >
                 <div className="row g-2">

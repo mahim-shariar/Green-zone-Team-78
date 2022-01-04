@@ -21,30 +21,30 @@ const Footer = () => {
           <h2 className='fw-bold' >
             Social</h2>
           <ul className="box">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Pinterest</a></li>
-            <li><a href="#">Dribbble</a></li>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
+            <li><a href="https://twitter.com/?lang=en">Twitter</a></li>
+            <li><a href="https://www.pinterest.com/">Pinterest</a></li>
+            <li><a href="https://dribbble.com/">Dribbble</a></li>
           </ul>
         </li>
         <li className="features">
           <h2 className='fw-bold' >
             Information</h2>
           <ul className="box h-box">
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Sales</a></li>
-            <li><a href="#">Certifications</a></li>
-            <li><a href="#">Customer Service</a></li>
+            <li>Blog</li>
+            <li>Pricing</li>
+            <li>Sales</li>
+            <li>Certifications</li>
+            <li>Customer Service</li>
           </ul>
         </li>
         <li>
           <h2 className='fw-bold'>
             Legal</h2>
           <ul className="box">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Contract</a></li>
+            <li>Privacy Policy</li>
+            <li>Terms of Use</li>
+            <li>Contract</li>
           </ul>
         </li>
       </ul>

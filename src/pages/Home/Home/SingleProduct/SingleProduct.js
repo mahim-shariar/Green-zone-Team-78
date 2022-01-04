@@ -23,7 +23,7 @@ const SingleProduct = (props) => {
                 
                 <Typography variant='body2'
                     sx={{ color: '#9c5938' }}>
-                    {description.slice(0, 295)}
+                    {description.slice(0, 250)}
                     ..<italic style={{color:'red'}}>Read More</italic>
                 </Typography>
                 

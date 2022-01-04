@@ -5,11 +5,11 @@ const firebaseConfig = {
     // storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
     // messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
     // appId: process.env.REACT_APP_APP_ID,
-    apiKey: "AIzaSyCvhzaShIxzb-ZUXgsBVMwpx9CS_WstfAo",
-    authDomain: "home-seell.firebaseapp.com",
-    projectId: "home-seell",
-    storageBucket: "home-seell.appspot.com",
-    messagingSenderId: "959570252070",
-    appId: "1:959570252070:web:140769ff861efea6c4f1e7"
+    apiKey: "AIzaSyB-LtdEW3mMlOpA0WBgFcMtciagaV3CtoQ",
+    authDomain: "green-zone-979ee.firebaseapp.com",
+    projectId: "green-zone-979ee",
+    storageBucket: "green-zone-979ee.appspot.com",
+    messagingSenderId: "316878172245",
+    appId: "1:316878172245:web:8d6345ef75eb49e3cee4dc"
 };
 export default firebaseConfig;

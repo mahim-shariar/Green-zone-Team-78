@@ -48,7 +48,7 @@ const Navigation = () => {
       }
     }
   })
-  const { navIcon, navIconContainer, navLogo } = useStyle();
+  const { navIcon, navIconContainer} = useStyle();
 
   const [state, setState] = React.useState(false);
   <Box
