@@ -1,5 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import SolarEnergies from './pages/Home/Home/SolarEnergies/SolarEnergies';
+import PurchaseBathroom from './pages/Home/Home/PurchaseBathroom/PurchaseBathroom';
+import PurchaseCcTv from './pages/Home/Home/PurchaseCctv/PurchaseCcTv';
+import PurchaseEco from './pages/Home/Home/PurchaseEco/PurchaseEco';
+import PurchaseFurniture from './pages/Home/Home/PurchaseFurniture/PurchaseFurniture';
+import PurchaseInterior from './pages/Home/Home/PurchaseInterior/PurchaseInterior';
+// import PurchaseProducts from './pages/Home/Home/PurchaseProducts/PurchaseProducts';
+import PurchaseSolar from './pages/Home/Home/PurchaseSolar/PurchaseSolar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import AuthProvider from './pages/Context/AuthProvider';
@@ -11,6 +19,8 @@ import MyOrders from './pages/Home/Home/Dashboard/MyOrders';
 import Payment from './pages/Home/Home/Dashboard/Payment';
 import SendReviews from './pages/Home/Home/Dashboard/SendReviews';
 import Explores from './pages/Home/Home/Explores/Explores';
+import BathroomFeetings from './pages/Home/Home/BathroomFeetings/BathroomFeetings';
+import CcTvs from './pages/Home/Home/CcTvs/CcTvs';
 // import InteriorDesigns from './pages/Home/Home/InteriorDesigns/InteriorDesigns';
 import Login from './pages/Home/Home/Login/Login/Login';
 import Register from './pages/Home/Home/Login/Register/Register';
@@ -22,16 +32,37 @@ import Reviews from './pages/Home/Home/Reviews/Reviews';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Services from './pages/Home/Home/Services/Services';
 import Demo from './pages/Home/Home/Demo/Demo';
+import EcoMaterials from './pages/Home/Home/EcoMaterials/EcoMaterials';
+import Furnitures from './pages/Home/Home/Furnitures/Furnitures';
+import InteriorDesigns from './pages/Home/Home/InteriorDesigns/InteriorDesigns';
 
 
 function App() {
    return (
-      <div className="App" style={{backgroundColor:'D9D9D9'}} >
+      <div className="App" style={{ backgroundColor: 'D9D9D9' }} >
          <AuthProvider>
             <BrowserRouter>
                <Switch>
                   <Route exact path='/'>
                      <Home></Home>
+                  </Route>
+                  <Route exact path='/interior'>
+                     <InteriorDesigns></InteriorDesigns>
+                  </Route>
+                  <Route exact path='/cctv'>
+                     <CcTvs></CcTvs>
+                  </Route>
+                  <Route exact path='/bathroomfeetings'>
+                     <BathroomFeetings></BathroomFeetings>
+                  </Route>
+                  <Route exact path='/ecomaterials'>
+                     <EcoMaterials></EcoMaterials>
+                  </Route>
+                  <Route exact path='/solarenergy'>
+                     <SolarEnergies></SolarEnergies>
+                  </Route>
+                  <Route exact path='/furniture'>
+                     <Furnitures></Furnitures>
                   </Route>
                   <Route exact path='/home'>
                      <Home></Home>
@@ -84,6 +115,24 @@ function App() {
                   <Route exact path='*'>
                      <NotFound></NotFound>
                   </Route>
+                  <PrivateRoute path='/purchaseEco/:ecoId'>
+                     <PurchaseEco></PurchaseEco>
+                  </PrivateRoute>
+                  <PrivateRoute path='/purchaseSolar/:solarId'>
+                     <PurchaseSolar></PurchaseSolar>
+                  </PrivateRoute>
+                  <PrivateRoute path='/purchaseFurniture/:furnitureId'>
+                     <PurchaseFurniture></PurchaseFurniture>
+                  </PrivateRoute>
+                  <PrivateRoute path='/purchaseBathroom/:bathroomId'>
+                     <PurchaseBathroom></PurchaseBathroom>
+                  </PrivateRoute>
+                  <PrivateRoute path='/purchaseCctv/:ccTvId'>
+                     <PurchaseCcTv></PurchaseCcTv>
+                  </PrivateRoute>
+                  <PrivateRoute path='/purchaseInterior/:interiorId'>
+                     <PurchaseInterior></PurchaseInterior>
+                  </PrivateRoute>
                </Switch>
             </BrowserRouter>
          </AuthProvider>

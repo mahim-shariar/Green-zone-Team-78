@@ -34,6 +34,12 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import BadgeIcon from '@mui/icons-material/Badge';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Payment from './Payment';
+import AddBathoomFeetings from './AdminDashboard/AddBathoomFeetings';
+import AddccTv from './AdminDashboard/AddccTv';
+import AddInteriorDesign from './AdminDashboard/AddInteriorDesign';
+import AddEcoMaterial from './AdminDashboard/AddEcoMaterial';
+import AddSolarEnergy from './AdminDashboard/AddSolarEnergy';
+import AddFurniture from './AdminDashboard/AddFurniture';
 
 
 
@@ -86,7 +92,31 @@ function Dashboard(props) {
         </Link> <br />
 
         <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'><LogoutIcon /> Log Out</Button></Link>
-      </Box> :
+        <Link to={`${url}/addBathroomFeetings`} style={style}>
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add A Bathroom Feetings</Button>
+        </Link>
+
+        <Link to={`${url}/cctv`} style={style}>
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add CC Tv</Button>
+        </Link>
+
+        <Link to={`${url}/interiorDesign`
+        } style={style} >
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add Interior Design</Button>
+        </Link >
+
+        <Link to={`${url}/ecoMaterial`} style={style} >
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add Eco Materials</Button>
+        </Link >
+
+        <Link to={`${url}/solarEnergy`} style={style} >
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add Solar Energy</Button>
+        </Link >
+
+        <Link to={`${url}/addFurniture`} style={style} >
+          <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add Furniture</Button>
+        </Link >
+      </Box > :
         <Box>
 
           <List>
@@ -111,7 +141,7 @@ function Dashboard(props) {
           </Link>
 
         </Box>}
-    </div>
+    </div >
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
@@ -193,6 +223,24 @@ function Dashboard(props) {
             <AdminRoute path={`${path}/addProducts`}>
               <AddProducts></AddProducts>
             </AdminRoute>
+            <AdminRoute path={`${path}/addBathroomFeetings`}>
+              <AddBathoomFeetings></AddBathoomFeetings>
+            </AdminRoute>
+            <AdminRoute path={`${path}/cctv`}>
+              <AddccTv></AddccTv>
+            </AdminRoute>
+            <AdminRoute path={`${path}/interiorDesign`}>
+              <AddInteriorDesign></AddInteriorDesign>
+            </AdminRoute>
+            <AdminRoute path={`${path}/ecoMaterial`}>
+              <AddEcoMaterial></AddEcoMaterial>
+            </AdminRoute>
+            <AdminRoute path={`${path}/solarEnergy`}>
+              <AddSolarEnergy></AddSolarEnergy>
+            </AdminRoute >
+            <AdminRoute path={`${path}/addFurniture`}>
+              <AddFurniture></AddFurniture>
+            </AdminRoute >
             <AdminRoute path={`${path}/manageProducts`}>
               <ManageProducts></ManageProducts>
             </AdminRoute>
@@ -202,9 +250,10 @@ function Dashboard(props) {
             <Route path={`${path}/payment/:productId`}>
               <Payment></Payment>
             </Route>
-          </Switch>
-        </Box>
-      </Box>
+
+          </Switch >
+        </Box >
+      </Box >
     </>
   );
 }

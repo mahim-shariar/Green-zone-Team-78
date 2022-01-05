@@ -91,7 +91,7 @@ const Navigation = () => {
     //     </React.Fragment>
 
     //   </div> </>
-    <Navbar bg="light" variant="light" className='mx-2' sticky='top' collapseOnSelect expand="lg" style={{ backgroundColor: '#0a1735',}}>
+    <Navbar bg="light" variant="light" className='mx-2' collapseOnSelect expand="lg" style={{ backgroundColor: '#0a1735',}}>
       <Navbar.Brand href="#home">
         <h5>
           <img
@@ -110,6 +110,7 @@ const Navigation = () => {
           <Link to='/explores' style={style}><Button color="inherit">Explore</Button></Link>
           <Link to='/reviews' style={style}><Button color="inherit">Reviews</Button></Link>
           <Link to='/meetBenefit' style={style}><Button color="inherit">About</Button></Link>
+          <Link to='/demo' style={style}><Button color="inherit">Demo</Button></Link>
           <Link to='/services' style={style}><Button color="inherit">Services</Button></Link>
           {
             user.email && <Link to='/dashboard' style={style}><Button color="inherit">Dashboard</Button></Link>
