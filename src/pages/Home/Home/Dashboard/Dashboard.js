@@ -91,7 +91,6 @@ function Dashboard(props) {
           <Button color='inherit'><AdminPanelSettingsIcon /> Make Admin</Button>
         </Link> <br />
 
-        <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'><LogoutIcon /> Log Out</Button></Link>
         <Link to={`${url}/addBathroomFeetings`} style={style}>
           <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add A Bathroom Feetings</Button>
         </Link>
@@ -116,6 +115,7 @@ function Dashboard(props) {
         <Link to={`${url}/addFurniture`} style={style} >
           <Button color='inherit'> <ProductionQuantityLimitsIcon /> Add Furniture</Button>
         </Link >
+        <Link to={`${url}/logout`} style={style}><Button onClick={logout} color='inherit'><LogoutIcon /> Log Out</Button></Link>
       </Box > :
         <Box>
 
@@ -139,7 +139,6 @@ function Dashboard(props) {
           <Link to='/home' style={style}>
             <Button onClick={logout}><LogoutIcon />Log Out</Button>
           </Link>
-
         </Box>}
     </div >
   );

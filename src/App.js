@@ -109,11 +109,8 @@ function App() {
                   <PrivateRoute path='/contact' >
                      <ContactUs></ContactUs>
                   </PrivateRoute>
-                  <PrivateRoute path='/services' >
+                  <Route path='/services' >
                      <Services></Services>
-                  </PrivateRoute>
-                  <Route exact path='*'>
-                     <NotFound></NotFound>
                   </Route>
                   <PrivateRoute path='/purchaseEco/:ecoId'>
                      <PurchaseEco></PurchaseEco>
@@ -133,6 +130,9 @@ function App() {
                   <PrivateRoute path='/purchaseInterior/:interiorId'>
                      <PurchaseInterior></PurchaseInterior>
                   </PrivateRoute>
+                  <Route exact path='*'>
+                     <NotFound></NotFound>
+                  </Route>
                </Switch>
             </BrowserRouter>
          </AuthProvider>

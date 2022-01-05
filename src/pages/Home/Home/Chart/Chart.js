@@ -39,37 +39,37 @@ const data = [
     {
         name: 'Eco Materials',
         Lose: 590,
-        Profite: 800,
+        Profit: 800,
         Invesment: 1400,
     },
     {
         name: 'Solar Energy',
-        Lose: 868,
-        Profite: 967,
+        Lose: 1245,
+        Profit: 967,
         Invesment: 1506,
     },
     {
         name: 'Furniture',
-        Lose: 1397,
-        Profite: 1098,
+        Lose: 809,
+        Profit: 1098,
         Invesment: 989,
     },
     {
         name: 'Water Supply',
-        Lose: 1480,
-        Profite: 1200,
+        Lose: 448,
+        Profit: 1200,
         Invesment: 1228,
     },
     {
         name: 'CCTV Replay',
-        Lose: 1520,
-        Profite: 1108,
+        Lose: 880,
+        Profit: 1108,
         Invesment: 1100,
     },
     {
         name: 'Interior Design',
-        Lose: 1400,
-        Profite: 680,
+        Lose: 700,
+        Profite:1020,
         Invesment: 1700,
     },
 ];
@@ -93,10 +93,10 @@ const Chart = () => {
 
     return (
         <Container style={{ marginTop: '150px', marginBottom: '150px' }} >
-            <h1 style={{ color: '#574437',fontWeight:'700'}} > OUR SELLS </h1><hr />
+            <h1 style={{ color: '#574437',fontWeight:'800'}} > OUR <span style={{color:'#dba913'}} > SELLS </span> </h1><hr />
             <Grid container spacing={2} sx={{ my: 3 }} >
                 <Grid item md={8} xs={12} >
-                    <h3 style={{ color: '#574437' }} > Our investment </h3>
+                    <h3 style={{ color: '#574437' }} > Our Last Month's Profit</h3>
                     <div className='mx-auto' style={{ width: '100%', height: 450 }}>
                         <ResponsiveContainer>
                             <ComposedChart
@@ -116,7 +116,7 @@ const Chart = () => {
                                 <Tooltip />
                                 <Legend />
                                 <Area type="monotone" dataKey="Invesment" fill="#8884d8" stroke="#8884d8" />
-                                <Bar dataKey="Profite" barSize={20} fill="#413ea0" />
+                                <Bar dataKey="Profit" barSize={20} fill="#413ea0" />
                                 <Line type="monotone" dataKey="Lose" stroke="#ff7300" />
                             </ComposedChart>
                         </ResponsiveContainer>

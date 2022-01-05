@@ -6,7 +6,7 @@ import './../Products/Products.css';
 
 const Contact = () => {
     return (
-        <div style={{ backgroundColor: '#5f28bfba', padding: '5%' }}>
+        <div style={{ backgroundColor: '#54afb7e6', padding: '5%' }}>
             <Container>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>

@@ -6,7 +6,7 @@ const BathroomFeeting = (props) => {
     const { name, img,desc,price,serviceCharge,_id} = props.bathroomFeeting;
     return (
         <Grid item xs={12} md={4}>
-        <Paper elevation={3} sx={{p:6}}>
+        <Paper elevation={3} sx={{p:6 ,backgroundColor:'#e1dada'}}>
         <Avatar
           alt="Remy Sharp"
           src={img}
@@ -22,7 +22,7 @@ const BathroomFeeting = (props) => {
             
             <Typography variant='body2'
                 sx={{ color: '#9c5938' }}>
-                {desc.slice(0, 300)}
+                {desc.slice(0, 250)}
                 ..<italic style={{color:'red'}}>Read More</italic>
             </Typography>
             
@@ -46,8 +46,8 @@ const BathroomFeeting = (props) => {
             </div>
             <Link to={`/purchaseBathroom/${_id}`} style={{textDecoration:'none'}}>
             <Button
-                variant='contained'
-                sx={{ backgroundColor: '#574437'}}>Purchase Now</Button>
+                className='btn-style' variant="outlined"
+                sx={{ backgroundColor: '#a71324', color: 'white', border: 'solid 1px #a71324', marginY: 3, textDecoration: 'none' }}>Purchase Now</Button>
             </Link>
         </Paper>
     </Grid>

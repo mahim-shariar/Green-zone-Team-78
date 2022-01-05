@@ -14,8 +14,9 @@
     display: flex;
     flex-flow: row wrap;
     padding: 50px;
+    padding-bottom: 10px;
     color: #fff;
-    background-color: #8d99ae;
+    background-color:#120e0e;
     }
     
     .footer > * {
@@ -48,6 +49,7 @@
     .r-footer {
     display: flex;
     flex-flow: row wrap;
+    align-items: center;
     }
     
     .r-footer > * {
@@ -60,8 +62,8 @@
     }
     
     .h-box {
-    column-count: 2;
-    column-gap: 1.25em;
+    column-count: 1;
+    /* column-gap: 1.25em; */
     }
     
     .b-footer {
