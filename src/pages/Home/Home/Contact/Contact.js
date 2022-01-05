@@ -1,24 +1,24 @@
 import { Button, Grid, Typography } from '@mui/material';
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import iconPhone from '../../../../image/icon-img/icon-phone.png';
+// import iconPhone from '../../../../image/icon-img/icon-phone.png';
 import './../Products/Products.css';
 
 const Contact = () => {
     return (
-        <div style={{ backgroundColor: '#e1c265', padding: '5%' }}>
+        <div style={{ backgroundColor: '#5f28bfba', padding: '5%' }}>
             <Container>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                        <Typography variant='h5' sx={{ color: 'white', fontWeight: '800' }}>24/7 Call Center</Typography>
-                        <Typography variant='h4' sx={{ color: '#544438', fontWeight: '900' }}>Need a consultation?</Typography>
-                        <Typography variant='h4' sx={{ color: 'white', fontWeight: '700', mt: 2 }}>  <img className='img-fluid' src={iconPhone} alt="" /> +8801700000000</Typography>
+                        <Typography variant='h2' className='rounded p-1 ' sx={{ color: 'white', fontWeight: '800' }}>24/7 Call Center</Typography>
+                        <Typography variant='h4' sx={{color: 'white', fontWeight: '900' }}>Need a <span className='text-warning' > consultation?</span> </Typography>
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <Button size="large" className='btn-style'
-                            variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginTop: 2 }}>
-                            <a style={{textDecoration:'none',color: 'white'}} href="#contact"> Contcat Us</a>
+                            variant="outlined" sx={{ backgroundColor: '#a71324', color: 'white', border: 'solid 1px #574437', marginTop: 2 }}>
+                            <a style={{textDecoration:'none',color: 'white'}} href="#contact"> Contact Us</a>
                         </Button>
+                        <Typography variant='h4' sx={{ color: 'white', fontWeight: '700', mt: 2 }}> +8801700000000</Typography>
                     </Grid>
                 </Grid>
             </Container>

@@ -12,7 +12,7 @@ const Footer = () => {
           </h4>
         </div>
         <div>
-          <p className='text-center' >
+          <p className='text-center text-light' >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam atque recusandae in sit sunt molestiae aliquid fugit. Mollitia eaque tempore iure sit nobis? Vitae nemo, optio maiores numquam quis recusandae.</p>
         </div>
       </div>
@@ -21,10 +21,10 @@ const Footer = () => {
           <h2 className='fw-bold' >
             Social</h2>
           <ul className="box">
-            <li><a href="https://www.facebook.com/">Facebook</a></li>
-            <li><a href="https://twitter.com/?lang=en">Twitter</a></li>
-            <li><a href="https://www.pinterest.com/">Pinterest</a></li>
-            <li><a href="https://dribbble.com/">Dribbble</a></li>
+            <li><a className='btn  m-1 text-light ' href="https://www.facebook.com/">Facebook</a></li>
+            <li><a className='btn  m-1 text-light  ' href="https://twitter.com/?lang=en">Twitter</a></li>
+            <li><a className='btn  m-1 text-light ' href="https://www.pinterest.com/">Pinterest</a></li>
+            <li><a className='btn  m-1 text-light ' href="https://dribbble.com/">Dribbble</a></li>
           </ul>
         </li>
         <li className="features">

@@ -14,15 +14,16 @@ import {
     Legend,
     PieChart,
     Pie,
+    Cell,
 } from 'recharts';
 
 const data01 = [
     { name: 'Eco Meterials', value: 400 },
     { name: 'Solar Energy', value: 300 },
     { name: 'Furniture', value: 300 },
-    { name: 'Water Supply', value: 200 },
-    { name: 'CCTV Replay', value: 278 },
-    { name: 'Interior Design', value: 189 },
+    { name: 'Water Supply', value: 250 },
+    { name: 'CCTV Replay', value: 300 },
+    { name: 'Interior Design', value: 200 },
 ];
 
 // const data02 = [
@@ -72,13 +73,27 @@ const data = [
         Invesment: 1700,
     },
 ];
+const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+const RADIAN = Math.PI / 180;
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+
+    return (
+        <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+            {`${(percent * 100).toFixed(0)}%`}
+        </text>
+    );
+};
+
 
 const Chart = () => {
     // static demoUrl = 'https://codesandbox.io/s/composed-chart-in-responsive-container-pkqmy';
 
     return (
         <Container style={{ marginTop: '150px', marginBottom: '150px' }} >
-            <h1 style={{ color: '#574437' }} > OUR SELLS </h1><hr />
+            <h1 style={{ color: '#574437',fontWeight:'700'}} > OUR SELLS </h1><hr />
             <Grid container spacing={2} sx={{ my: 3 }} >
                 <Grid item md={8} xs={12} >
                     <h3 style={{ color: '#574437' }} > Our investment </h3>
@@ -109,21 +124,23 @@ const Chart = () => {
                 </Grid>
                 <Grid item md={4} xs={12} >
                     {/* <h3 style={{ color: '#574437' }} > Our Profite </h3> */}
-                    <div style={{width:"100%",height:"100%"}} >
-                        <ResponsiveContainer>
+                    <div style={{ width: "100%", height: "100%" }} >
+                        <ResponsiveContainer width="100%" height="100%">
                             <PieChart width={400} height={400}>
                                 <Pie
-                                    dataKey="value"
-                                    isAnimationActive={false}
                                     data={data01}
                                     cx="50%"
                                     cy="50%"
+                                    labelLine={false}
+                                    label={renderCustomizedLabel}
                                     outerRadius={80}
                                     fill="#8884d8"
-                                    label
-                                />
-                                {/* <Pie dataKey="value" data={data02} cx={500} cy={200} innerRadius={40} outerRadius={80} fill="#82ca9d" /> */}
-                                <Tooltip />
+                                    dataKey="value"
+                                >
+                                    {data.map((entry, index) => (
+                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                    ))}
+                                </Pie>
                             </PieChart>
                         </ResponsiveContainer>
                     </div>

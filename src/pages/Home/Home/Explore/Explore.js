@@ -7,7 +7,7 @@ const Explore = (props) => {
     const { name, description, image, price, discountPrice, _id } = props.explore;
     return (
         <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 6 }}>
+            <Paper elevation={3} sx={{ p: 6 , backgroundColor:'#e1dada'}}>
                 <Avatar
                     alt="Remy Sharp"
                     src={image}
@@ -22,9 +22,9 @@ const Explore = (props) => {
                 </Typography> <hr />
 
                 <Typography variant='body2'
-                    sx={{ color: '#9c5938' }}>
+                    sx={{ color: 'black' }}>
                     {description.slice(0, 250)}
-                    ..<italic style={{ color: 'red' }}>Read More</italic>
+                    ..<italic style={{ color: 'red',fontWeight:600 }}>Read More</italic>
                 </Typography>
 
                 <div style={{
@@ -34,7 +34,7 @@ const Explore = (props) => {
                     <Typography variant='h5'>
                         <s className='text-muted' style={{
                             fontWeight: '900',
-                            color: '#99402c'
+                            color: 'black'
                         }}>${price}</s>
                     </Typography>
 
@@ -50,7 +50,7 @@ const Explore = (props) => {
                 <Link to={`/purchaseProducts/${_id}`} style={{ textDecoration: 'none' }}>
                     <Button
                         className='btn-style'
-                        variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }}>Purchase Now</Button>
+                        variant="outlined" sx={{ backgroundColor: '#a71324', color: 'white', border: 'solid 1px #a71324', marginY: 2 }}>Purchase Now</Button>
                 </Link>
             </Paper>
         </Grid>

@@ -7,7 +7,7 @@ const SingleProduct = (props) => {
     const { name, description, image, price, discountPrice, _id } = props.product;
     return (
         <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{p:6}}>
+            <Paper elevation={3} sx={{p:6,backgroundColor:"#e1dada"}} >
             <Avatar
               alt="Remy Sharp"
               src={image}
@@ -22,19 +22,19 @@ const SingleProduct = (props) => {
                 </Typography> <hr />
                 
                 <Typography variant='body2'
-                    sx={{ color: '#9c5938' }}>
+                    sx={{ color: 'black' ,fontWeight:300}}>
                     {description.slice(0, 250)}
-                    ..<italic style={{color:'red'}}>Read More</italic>
+                    ..<italic style={{color:'#a71324',fontWeight:600}}>Read More</italic>
                 </Typography>
                 
                 <div style={{
                     display: 'flex',
-                    justifyContent: 'space-evenly'
+                    justifyContent: 'space-evenly',
                 }}>
                     <Typography variant='h5'>
                         <s className='text-muted' style={{
                                  fontWeight: '900',
-                                 color: '#99402c'
+                                 color: 'black'
                                 }}>${price}</s>
                     </Typography>
                     
@@ -49,7 +49,7 @@ const SingleProduct = (props) => {
                 <Link to={`/purchaseProducts/${_id}`} style={{textDecoration:'none'}}>
                 <Button
                     className='btn-style'
-                    variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }}>Purchase Now</Button>
+                    variant="outlined" sx={{ backgroundColor: '#a71324', color: 'white', border: 'solid 1px #6b9080', marginY: 3 }}>Purchase Now</Button>
                 </Link>
          </Paper>
     </Grid>

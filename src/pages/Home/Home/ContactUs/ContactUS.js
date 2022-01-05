@@ -27,7 +27,7 @@ export const ContactUs = () => {
                 <Grid container spacing={2} sx={{ marginY: 10 }} >
                     <Grid item xs={12} md={6} lg={6} className='my-auto' >
                         <form ref={form} onSubmit={sendEmail} className='mx-auto d-flex flex-column w-100 '>
-                            <h1 className='abouts-color text-start' > Contact me </h1>
+                            <h1 className='abouts-color text-start' > Contact US </h1>
                             <label className='text-dark text-start fw-bold' >Name</label>
                             <input type="text" name="user_name" />
                             <label className='text-dark text-start fw-bold' >Email</label>

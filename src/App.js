@@ -20,6 +20,7 @@ import PurchaseProducts from './pages/Home/Home/PurchaseProducts/PurchaseProduct
 import Reviews from './pages/Home/Home/Reviews/Reviews';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Services from './pages/Home/Home/Services/Services';
+import Demo from './pages/Home/Home/Demo/Demo';
 
 
 function App() {
@@ -37,9 +38,9 @@ function App() {
                   <Route exact path='/products'>
                      <Products></Products>
                   </Route>
-                  <Route exact path='/explores'>
+                  <PrivateRoute exact path='/explores'>
                      <Explores></Explores>
-                  </Route>
+                  </PrivateRoute>
                   <PrivateRoute path='/purchaseProducts/:productId'>
                      <PurchaseProducts></PurchaseProducts>
                   </PrivateRoute>
@@ -69,6 +70,9 @@ function App() {
                   </Route>
                   <Route exact path='/addProducts'>
                      <AddProducts></AddProducts>
+                  </Route>
+                  <Route exact path='/demo'>
+                     <Demo></Demo>
                   </Route>
                   <PrivateRoute path='/contact' >
                      <ContactUs></ContactUs>

@@ -6,6 +6,7 @@ import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './Login.css'
 import { Google } from '@mui/icons-material';
+import Footer from '../../../../Shared/Footer/Footer';
 
 
 const Login = () => {
@@ -31,11 +32,12 @@ const Login = () => {
         signInWithGoogle(location, history)
     }
     return (
-        <Container>
+        <>
             <Navigation></Navigation>
-            <Grid container spacing={2} sx={{ mt: 10 }} >
-                    <Grid item sx={{ mt: 8 }} xs={12} md={6} style={{ borderRadius:'5px', marginTop: '50px', backgroundColor: '#f9d66f', color: '#14539a', padding: '20px' }}>
-                        <Typography variant="h4" gutterBottom sx={{color:'white'}} >Please Login</Typography> <hr />
+            <Container>
+                <Grid container spacing={2} sx={{ mt: 10 }} >
+                    <Grid item sx={{ mt: 8 }} xs={12} md={6} style={{ borderRadius: '5px', marginTop: '50px', backgroundColor: '#f9d66f', color: '#14539a', padding: '20px' }}>
+                        <Typography variant="h4" gutterBottom sx={{ color: 'white' }} >Please Login</Typography> <hr />
                         <form onSubmit={handleLoginSubmit}>
                             <TextField
                                 style={{ width: '75%', m: 1 }}
@@ -53,7 +55,7 @@ const Login = () => {
                                 onChange={handleOnChange}
                                 variant="standard" /> <br /> <br />
 
-                            <Button sx={{backgroundColor:'#574437',color:'white',border:'solid 1px #574437',width:'75%'}} type="submit" className='btn-style' variant="outlined">Login</Button> <br /><br />
+                            <Button sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', width: '75%' }} type="submit" className='btn-style' variant="outlined">Login</Button> <br /><br />
                             <NavLink
                                 style={{ textDecoration: 'none' }}
                                 to="/register">
@@ -63,16 +65,17 @@ const Login = () => {
                             {user?.email && <Alert severity="success"> Successfully Login!</Alert>}
                             {authError && <Alert severity="error">{authError}</Alert>}
                         </form>
-                        <p style={{color:'#574437'}} >------------OR-------------</p>
-                        <Button onClick={handleGoogleSignIn} className='btn-style'  variant="outlined" sx={{backgroundColor:'#574437',color:'white',border:'solid 1px #574437' ,marginY:5 , marginTop:0}}>
+                        <p style={{ color: '#574437' }} >------------OR-------------</p>
+                        <Button onClick={handleGoogleSignIn} className='btn-style' variant="outlined" sx={{ backgroundColor: '#574437', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }}>
                             <Google></Google>
                         </Button>
                     </Grid>
-                <Grid item xs={12} md={6}>
-                    <img style={{ width: '100%' }} src={loginBanner} alt="" />
+                    <Grid item xs={12} md={6}>
+                        <img style={{ width: '100%' }} src={loginBanner} alt="" />
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </>
     );
 };
 

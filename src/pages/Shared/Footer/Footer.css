@@ -15,7 +15,7 @@
     flex-flow: row wrap;
     padding: 50px;
     color: #fff;
-    background-color: grey;
+    background-color: #8d99ae;
     }
     
     .footer > * {
@@ -99,5 +99,8 @@
     .r-footer {
     flex: 2 0px;
     }
+    /* .btn-primary{
+        background-color: #0091ad !important;
+    } */
     }
     
