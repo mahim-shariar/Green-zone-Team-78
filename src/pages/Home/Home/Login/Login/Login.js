@@ -7,7 +7,7 @@ import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './Login.css'
 import { Google } from '@mui/icons-material';
 import Footer from '../../../../Shared/Footer/Footer';
-
+import React from 'react';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
