@@ -2,8 +2,9 @@ import { Avatar, Button, Grid, Paper, Typography } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BathroomFeeting = (props) => {
-    const { name, img,desc,price,serviceCharge,_id} = props.bathroomFeeting;
+//Solar Energy Function
+const SolarEnergy = (props) => {
+    const { name, img,desc,price,stock,_id} = props.solar;
     return (
         <Grid item xs={12} md={4}>
         <Paper elevation={3} sx={{p:6}}>
@@ -29,10 +30,10 @@ const BathroomFeeting = (props) => {
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-evenly'
-            }}>
-                <Typography variant='p'  style={{
-                             fontWeight: '900',
-                             color: '#99402c'
+                }}>
+                    <Typography variant='p' style={{
+                        fontWeight: '900',
+                        color: '#99402c'
                             }}>
                    Price: ${price}     ~
                 </Typography>
@@ -41,17 +42,17 @@ const BathroomFeeting = (props) => {
                     sx={{
                         fontWeight: '900',
                         color: '#99402c'}}>
-                  Service Charge: ${serviceCharge}
+                  Stock: {stock}
                 </Typography> <br/> <br/>              
             </div>
-            <Link to={`/purchaseBathroom/${_id}`} style={{textDecoration:'none'}}>
+            <Link to={`/purchaseSolar/${_id}`} style={{textDecoration:'none'}}>
             <Button
                 variant='contained'
                 sx={{ backgroundColor: '#574437'}}>Purchase Now</Button>
             </Link>
-        </Paper>
-    </Grid>
+          </Paper>
+       </Grid>
     );
 };
 
-export default BathroomFeeting;
+export default SolarEnergy;
