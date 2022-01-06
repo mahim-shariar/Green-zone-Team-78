@@ -25,7 +25,7 @@ const WorkData = [
 
 ]
 
-//Work Process Function
+//Work Process function
 const WorkProcess = () => {
     return (
         <section className="workProcess my-5 ">
