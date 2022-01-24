@@ -34,7 +34,7 @@ const Login = () => {
         <>
             <Navigation></Navigation>
             <Container>
-                <Grid container spacing={2} sx={{ my: 10 }} className='shadow-lg' >
+                {isLoading ? <CircularProgress sx={{color:'rgb(167, 19, 36)'}} /> : <Grid container spacing={2} sx={{ my: 10 }} className='shadow-lg' >
                     <Grid item sx={{ mt: 8 }} xs={12} md={6} style={{ borderRadius: '5px', marginTop: '50px', backgroundColor: '#f8f9fa', color: '#14539a', padding: '20px' }}>
                         <Typography variant="h4" gutterBottom sx={{ color: '#574437' }} >Please Login</Typography> <hr />
                         <form onSubmit={handleLoginSubmit}>
@@ -60,7 +60,7 @@ const Login = () => {
                                 to="/register">
                                 <Button variant="text">New to Green Zone? Please Click SignUp</Button>
                             </NavLink>
-                            {isLoading && <CircularProgress />}
+                            {/* {isLoading && <CircularProgress />} */}
                             {user?.email && <Alert severity="success"> Successfully Login!</Alert>}
                         </form>
                         <p style={{ color: '#574437' }} >------------OR-------------</p>
@@ -71,7 +71,7 @@ const Login = () => {
                     <Grid item xs={12} md={6}>
                         <img style={{ width: '100%' }} src={loginBanner} alt="" />
                     </Grid>
-                </Grid>
+                </Grid>}
             </Container>
         </>
     );

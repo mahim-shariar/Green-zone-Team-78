@@ -38,7 +38,7 @@ const Register = () => {
         <>
             <Navigation></Navigation>
             <Container>
-                <Grid container spacing={2} sx={{ my: 10 }} className='shadow-lg' >
+                { isLoading ? <CircularProgress sx={{color:'rgb(167, 19, 36)'}} /> : <Grid container spacing={2} sx={{ my: 10 }} className='shadow-lg' >
                     <Grid item xs={12} md={6} style={{ borderRadius: '5px', marginTop: '50px', color: 'white' }}>
                         <Typography variant="h4" gutterBottom sx={{ color: '#574437' }} >Please create an account</Typography> <hr />
                         {!isLoading && <form onSubmit={handleLoginSubmit}>
@@ -86,13 +86,12 @@ const Register = () => {
                                 <Google></Google>
                             </Button>
                         </form>}
-                        {isLoading && <CircularProgress />}
                         {user?.email && <Alert severity="success">User Created successfully!</Alert>}
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <img style={{ width: '100%', marginTop: '5%' }} src='https://img.freepik.com/free-vector/messenger-concept-illustration_114360-860.jpg?size=626&ext=jpg' alt="" />
                     </Grid>
-                </Grid>
+                </Grid>}
             </Container>
         </>
     );

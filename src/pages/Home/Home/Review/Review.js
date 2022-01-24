@@ -36,56 +36,56 @@ const Review = (props) => {
   };
 
   return (
-    <Grid item xs={12} md={4}>
-      <Card sx={{ maxWidth: 345, backgroundColor: '#d0d9d95c' }}>
-        <CardHeader
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={name}
-          subheader={date}
-        />
-        <Typography component="legend">Rating</Typography>
-        <Rating name="readonly" value={rating} readOnly />
-        <CardMedia
-          component="img"
-          height="240"
-          image={image}
-          alt=""
-        />
+    <Grid item xs={12} md={4} sx={{display:'flex',justifyContent:'center'}} >
+      <Card sx={{maxWidth: 345, backgroundColor: '#d0d9d95c'}}>
+      <CardHeader
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={name}
+        subheader={date}
+      />
+      <Typography component="legend">Rating</Typography>
+      <Rating name="readonly" value={rating} readOnly />
+      <CardMedia
+        component="img"
+        height="240"
+        image={image}
+        alt=""
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
+        <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
+      </CardActions>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            {description}
+          <Typography paragraph>Greetings:</Typography>
+          <Typography paragraph>
+            Thanks so much
           </Typography>
         </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <ExpandMore
-            expand={expanded}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </ExpandMore>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>Greetings:</Typography>
-            <Typography paragraph>
-              Thanks so much
-            </Typography>
-          </CardContent>
-        </Collapse>
-      </Card>
-    </Grid>
+      </Collapse>
+    </Card>
+    </Grid >
   );
 };
 
