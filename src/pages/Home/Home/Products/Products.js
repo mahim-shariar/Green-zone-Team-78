@@ -1,13 +1,6 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import SingleProduct from '../SingleProduct/SingleProduct';
-// import productsBg from '../../../../image/products-bg-2.jpg';
-
-// const style = {
-//     background: `url(${productsBg}),linear-gradient(#43657a,#a4a7ab)`,
-//     backgroundSize: 'cover',
-//     backgroundBlendMode:'overlay'
-// }
 
 const Products = () => {
     const [products, setProducts] = useState([]);

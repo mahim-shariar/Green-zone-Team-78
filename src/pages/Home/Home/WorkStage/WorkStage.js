@@ -1,7 +1,6 @@
 import { Button, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import imgHouse from '../../../../image/image-house.png';
-import stageman from '../../../../image/stages-man.png';
 
 const WorkStage = () => {
     return (

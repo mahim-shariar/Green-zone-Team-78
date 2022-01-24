@@ -6,7 +6,6 @@ import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import './Login.css'
 import { Google } from '@mui/icons-material';
-// import Footer from '../../../../Shared/Footer/Footer';
 import React from 'react';
 
 const Login = () => {
@@ -53,9 +52,9 @@ const Login = () => {
                                 type="password"
                                 name="password"
                                 onChange={handleOnChange}
-                                variant="standard" /> <br /> <br />
-
-                            <Button sx={{ backgroundColor: 'rgb(167, 19, 36)', color: 'white', border: 'solid 1px #574437', width: '75%' }} type="submit" className='btn-style' variant="outlined">Login</Button> <br /><br />
+                                variant="standard" /> <br />
+                            {authError ? <Alert className="mx-auto" sx={{width:'75%',m:1}} severity="error">{authError.slice(22,100).split(').')}</Alert> : <div className='mb-3' ></div> }
+                            <Button sx={{ backgroundColor: 'rgb(167, 19, 36)', color: 'white', border: 'solid 1px #574437', width: '75%' }} type="submit" className='btn-style' variant="outlined">Login</Button> <br />
                             <NavLink
                                 style={{ textDecoration: 'none' }}
                                 to="/register">
@@ -63,7 +62,6 @@ const Login = () => {
                             </NavLink>
                             {isLoading && <CircularProgress />}
                             {user?.email && <Alert severity="success"> Successfully Login!</Alert>}
-                            {authError && <Alert severity="error">{authError}</Alert>}
                         </form>
                         <p style={{ color: '#574437' }} >------------OR-------------</p>
                         <Button onClick={handleGoogleSignIn} className='btn-style' variant="outlined" sx={{ backgroundColor: 'rgb(167, 19, 36)', color: 'white', border: 'solid 1px #574437', marginY: 5, marginTop: 0 }}>

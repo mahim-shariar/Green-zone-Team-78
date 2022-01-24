@@ -28,7 +28,6 @@ const Register = () => {
     }
     const handleLoginSubmit = e => {
         if (loginData.password !== loginData.password2) {
-            alert('Your password did not match');
             return
         }
         registerUser(loginData.email, loginData.password, loginData.name, history);
@@ -69,12 +68,13 @@ const Register = () => {
                             <TextField
                                 style={{ width: '75%', m: 1 }}
                                 id="standard-basic"
-                                label="ReType Your Password"
+                                label="Confirm Your Password"
                                 type="password"
                                 name="password2"
                                 onBlur={handleOnBlur}
-                                variant="standard" /> <br /> <br />
-
+                                variant="standard" /> <br />
+                                { loginData.password !== loginData.password2 ? <Alert className='mx-auto' sx={{width:'75%',m:1}} severity="error">Passwords did not match</Alert> : <div className='mb-3' ></div>}
+                                {authError && <Alert className='mx-auto' sx={{width:'75%',m:1}} severity="error">{authError.slice(9,100).split('(auth/weak-password).')}</Alert>}
                             <Button style={{ width: '75%', m: 1 }} className='btn-style' type="submit" variant="outlined" sx={{ backgroundColor: 'rgb(167, 19, 36)', color: 'white', border: 'solid 1px rgb(167, 19, 36)' }}>Register</Button> <br />
                             <NavLink
                                 style={{ textDecoration: 'none' }}
@@ -88,7 +88,6 @@ const Register = () => {
                         </form>}
                         {isLoading && <CircularProgress />}
                         {user?.email && <Alert severity="success">User Created successfully!</Alert>}
-                        {authError && <Alert severity="error">{authError}</Alert>}
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <img style={{ width: '100%', marginTop: '5%' }} src='https://img.freepik.com/free-vector/messenger-concept-illustration_114360-860.jpg?size=626&ext=jpg' alt="" />
